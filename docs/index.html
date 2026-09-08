@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,38 @@
   <!-- Google Fonts: Outfit (Títulos) e Inter (Cuerpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
       --bg-gradient: radial-gradient(circle at 50% 50%, #110d24 0%, #070510 100%);
       --card-bg: rgba(255, 255, 255, 0.03);
       --card-border: rgba(255, 255, 255, 0.07);
       --card-border-hover: rgba(255, 255, 255, 0.12);
-      
+
       --text: #f1f5f9;
       --text-soft: #94a3b8;
       --text-muted: #64748b;
-      
+
       --primary: #6366f1;
       --primary-hover: #4f46e5;
       --primary-glow: rgba(99, 102, 241, 0.15);
-      
+
       --success: #10b981;
       --success-glow: rgba(16, 185, 129, 0.2);
-      
+
       --danger: #ef4444;
       --danger-hover: #dc2626;
       --danger-glow: rgba(239, 68, 68, 0.2);
-      
+
       --warning: #f59e0b;
-      
+
       --radius-lg: 16px;
       --radius-md: 12px;
       --radius-sm: 8px;
-      
+
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -59,7 +62,10 @@
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
+    h1,
+    h2,
+    h3,
+    h4 {
       font-family: 'Outfit', sans-serif;
       font-weight: 600;
     }
@@ -210,6 +216,26 @@
       transition: var(--transition);
     }
 
+    select.input-field option {
+      background-color: #120f26;
+      /* Fondo oscuro sólido compatible con el tema radial */
+      color: #fff;
+    }
+
+    select.input-field {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%2394a3b8' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.25rem;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+
+
     .input-field:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px var(--primary-glow);
@@ -283,7 +309,8 @@
       font-size: 0.85rem;
     }
 
-    th, td {
+    th,
+    td {
       padding: 0.75rem 1rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -373,10 +400,12 @@
         transform: scale(0.9);
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
       }
+
       70% {
         transform: scale(1);
         box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
       }
+
       100% {
         transform: scale(0.9);
         box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
@@ -444,23 +473,24 @@
       border-radius: 50%;
     }
 
-    input:checked + .slider {
+    input:checked+.slider {
       background-color: var(--success);
     }
 
-    input:focus + .slider {
+    input:focus+.slider {
       box-shadow: 0 0 1px var(--success);
     }
 
-    input:checked + .slider:before {
+    input:checked+.slider:before {
       transform: translateX(22px);
     }
 
     /* Switch de Bloqueo (Inverso: activado = Rojo / Bloqueado) */
-    .switch-lock input:checked + .slider {
+    .switch-lock input:checked+.slider {
       background-color: var(--danger);
     }
-    .switch-lock input:focus + .slider {
+
+    .switch-lock input:focus+.slider {
       box-shadow: 0 0 1px var(--danger);
     }
 
@@ -560,9 +590,17 @@
       transform: translateX(0);
     }
 
-    .toast-success { border-left: 3px solid var(--success); }
-    .toast-error { border-left: 3px solid var(--danger); }
-    .toast-info { border-left: 3px solid var(--primary); }
+    .toast-success {
+      border-left: 3px solid var(--success);
+    }
+
+    .toast-error {
+      border-left: 3px solid var(--danger);
+    }
+
+    .toast-info {
+      border-left: 3px solid var(--primary);
+    }
 
     /* Badges */
     .badge {
@@ -597,8 +635,13 @@
     }
 
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     /* ── Logs del Sistema ─────────────────────────────── */
@@ -616,18 +659,28 @@
       gap: 0.5rem 0.75rem;
       padding: 0.6rem 0.75rem;
       border-radius: var(--radius-sm);
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       border-left: 3px solid transparent;
       transition: background 0.2s;
       cursor: pointer;
       font-size: 0.78rem;
     }
 
-    .log-entry:hover { background: rgba(255,255,255,0.06); }
+    .log-entry:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
 
-    .log-entry.nivel-ERROR  { border-left-color: var(--danger); }
-    .log-entry.nivel-WARNING { border-left-color: var(--warning); }
-    .log-entry.nivel-INFO   { border-left-color: var(--success); }
+    .log-entry.nivel-ERROR {
+      border-left-color: var(--danger);
+    }
+
+    .log-entry.nivel-WARNING {
+      border-left-color: var(--warning);
+    }
+
+    .log-entry.nivel-INFO {
+      border-left-color: var(--success);
+    }
 
     .log-badge {
       font-size: 0.65rem;
@@ -639,22 +692,59 @@
       white-space: nowrap;
     }
 
-    .log-badge.nivel-ERROR   { background: rgba(239,68,68,0.2);   color: #f87171; }
-    .log-badge.nivel-WARNING { background: rgba(245,158,11,0.2);  color: #fbbf24; }
-    .log-badge.nivel-INFO    { background: rgba(16,185,129,0.2);  color: #34d399; }
+    .log-badge.nivel-ERROR {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+    }
 
-    .log-body { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; }
-    .log-ts   { color: var(--text-muted); font-size: 0.7rem; }
-    .log-msg  { color: var(--text-soft); word-break: break-word; }
-    .log-detail { display: none; color: var(--text-muted); font-size: 0.7rem; white-space: pre-wrap; margin-top: 0.3rem; background: rgba(0,0,0,0.2); padding: 0.4rem; border-radius: 4px; }
-    .log-entry.expanded .log-detail { display: block; }
+    .log-badge.nivel-WARNING {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+    }
+
+    .log-badge.nivel-INFO {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+    }
+
+    .log-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      min-width: 0;
+    }
+
+    .log-ts {
+      color: var(--text-muted);
+      font-size: 0.7rem;
+    }
+
+    .log-msg {
+      color: var(--text-soft);
+      word-break: break-word;
+    }
+
+    .log-detail {
+      display: none;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      white-space: pre-wrap;
+      margin-top: 0.3rem;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 0.4rem;
+      border-radius: 4px;
+    }
+
+    .log-entry.expanded .log-detail {
+      display: block;
+    }
 
     /* Media Queries específicas para móviles */
     @media (max-width: 700px) {
       body {
         padding: 1rem 0.5rem;
       }
-      
+
       .header {
         flex-direction: column;
         gap: 1rem;
@@ -680,18 +770,113 @@
       .mobile-only {
         display: block !important;
       }
-      
+
       .card {
         padding: 1rem;
       }
-      
+
       .toast-container {
         right: 1.5rem;
         bottom: 1.5rem;
       }
     }
+
+    /* ── Estilos de Pestañas (Tabs) ── */
+    .dashboard-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.5rem;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+    }
+
+    /* Ocultar scrollbar de tabs en Webkit y Firefox */
+    .dashboard-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .dashboard-tabs {
+      scrollbar-width: none;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-soft);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.75rem 1.25rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+      position: relative;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+
+    .tab-btn.active {
+      color: #fff;
+      border-bottom: 2px solid var(--primary);
+      text-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+    }
+
+    .tab-btn svg {
+      transition: var(--transition);
+    }
+
+    .tab-btn.active svg {
+      color: var(--primary);
+      filter: drop-shadow(0 0 4px var(--primary-glow));
+    }
+
+    .tab-panel {
+      display: none;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: tabFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    @keyframes tabFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Ajustes móviles para las pestañas */
+    @media (max-width: 700px) {
+      .dashboard-tabs {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tab-btn {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.9rem;
+        flex: 1;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- PANTALLA DE ACCESO REMOTO (LOGIN / CONFIGURACIÓN) -->
@@ -701,28 +886,30 @@
       <p style="color: var(--text-soft); font-size: 0.8rem; text-align: center; margin-bottom: 1.5rem;">
         Ingrese los detalles de su base de datos Firebase Realtime Database para monitorear y controlar el sistema.
       </p>
-      
+
       <div class="form-group">
         <label for="fb-url">URL de Firebase RTDB</label>
-        <input type="url" id="fb-url" class="input-field" placeholder="https://mi-proyecto-rtdb.firebaseio.com/" required>
+        <input type="url" id="fb-url" class="input-field" placeholder="https://mi-proyecto-rtdb.firebaseio.com/"
+          required>
       </div>
-      
+
       <div class="form-group">
         <label for="fb-secret">Secreto de Base de Datos (Token)</label>
         <input type="password" id="fb-secret" class="input-field" placeholder="Opcional - Llave secreta del proyecto">
       </div>
-      
+
       <button class="btn btn-primary" onclick="conectarFirebase()" style="margin-top: 0.5rem;">Conectar Panel</button>
     </div>
   </div>
 
   <!-- PANEL DE CONTROL PRINCIPAL -->
   <div class="container" id="dashboard-container">
-    
+
     <!-- Barra Superior -->
     <div class="header">
       <div class="header-logo">
-        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+        <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none"
+          stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
         <div>
@@ -733,566 +920,2276 @@
       <button class="btn-logout" onclick="desconectar()">Desconectar</button>
     </div>
 
-    <!-- Grid de Contenido -->
-    <div class="dashboard-grid">
-      
-      <!-- Panel Izquierdo: Terminales Activas -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">
-            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:var(--success)"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            Terminales / Conexiones Activas
-          </h3>
-          <button class="btn-icon" onclick="cargarDatos()" title="Actualizar Lista">
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-          </button>
-        </div>
+    <!-- Barra de Pestañas (Tabs) -->
+    <div class="dashboard-tabs">
+      <button class="tab-btn active" id="btn-tab-terminales" onclick="switchTab('tab-terminales')">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span>Equipos</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-licencias" onclick="switchTab('tab-licencias')">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Licencias</span>
+      </button>
+      <button class="tab-btn" id="btn-tab-logs" onclick="switchTab('tab-logs')">
+        <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Logs</span>
+      </button>
+    </div>
 
-        <!-- Renderizado Desktop (Tabla) -->
-        <div class="table-responsive desktop-only">
-          <table id="table-terminals">
-            <thead>
-              <tr>
-                <th>Equipo / IP</th>
-                <th>Usuario</th>
-                <th>Versión</th>
-                <th>Último Contacto</th>
-                <th>Estado</th>
-                <th style="text-align: center;">Bloqueado (Kill-Switch)</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan="7" style="text-align: center; color: var(--text-soft); padding: 2rem;">
-                  <span class="loader"></span><br><br>Cargando terminales...
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <!-- Pestaña 1: Terminales y Acciones -->
+    <div id="tab-terminales" class="tab-panel active">
+      <div class="dashboard-grid">
 
-        <!-- Renderizado Móvil (Tarjetas) -->
-        <div class="mobile-only">
-          <div class="terminal-cards-container" id="mobile-terminals-list">
-            <div style="text-align: center; color: var(--text-soft); padding: 2rem;">
-              <span class="loader"></span><br><br>Cargando terminales...
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Panel Derecho: Acciones de Control -->
-      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        
-        <!-- Comunicados / Anuncios -->
+        <!-- Panel Izquierdo: Terminales Activas -->
         <div class="card">
           <div class="card-header">
             <h3 class="card-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              Publicar Comunicado
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" style="color:var(--success)">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              Terminales / Conexiones Activas
             </h3>
+            <button class="btn-icon" onclick="cargarDatos()" title="Actualizar Lista">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </button>
           </div>
-          
-          <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
-            Publique una lista de mejoras o mensaje global. Aparecerá inmediatamente en todos los navegadores conectados en la oficina.
-          </p>
-          
-          <div class="form-group">
-            <textarea id="txt-anuncio" class="input-field" rows="4" placeholder="Ej: Se optimizaron las búsquedas y se corrigió el choque de horarios en la selección múltiple..." style="resize: vertical;"></textarea>
+
+          <!-- Alerta de Demos Pendientes -->
+          <div id="pending-demos-banner" style="display:none; margin: 1rem 0;"></div>
+
+          <!-- Renderizado Desktop (Tabla) -->
+          <div class="table-responsive desktop-only">
+            <table id="table-terminals">
+              <thead>
+                <tr>
+                  <th>Equipo / IP</th>
+                  <th>Usuario</th>
+                  <th>Versión</th>
+                  <th>Último Contacto</th>
+                  <th>Estado</th>
+                  <th style="text-align: center;">Bloqueado (Kill-Switch)</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="7" style="text-align: center; color: var(--text-soft); padding: 2rem;">
+                    <span class="loader"></span><br><br>Cargando terminales...
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          
-          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-            <button class="btn btn-primary" onclick="publicarAnuncio()">Publicar en Pantallas</button>
-            <button class="btn btn-outline" onclick="limpiarAnuncio()">Eliminar Anuncio Actual</button>
+
+          <!-- Renderizado Móvil (Tarjetas) -->
+          <div class="mobile-only">
+            <div class="terminal-cards-container" id="mobile-terminals-list">
+              <div style="text-align: center; color: var(--text-soft); padding: 2rem;">
+                <span class="loader"></span><br><br>Cargando terminales...
+              </div>
+            </div>
           </div>
+
         </div>
 
-        <!-- Forzar Actualizaciones -->
-        <div class="card">
+        <!-- Panel Derecho: Acciones de Control -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+
+          <!-- Comunicados / Anuncios -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                Publicar Comunicado
+              </h3>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
+              Publique una lista de mejoras o mensaje global. Aparecerá inmediatamente en todos los navegadores
+              conectados en la oficina.
+            </p>
+
+            <div class="form-group">
+              <textarea id="txt-anuncio" class="input-field" rows="4"
+                placeholder="Descripción del anuncio o novedades del sistema..."
+                style="resize: vertical;"></textarea>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <button class="btn btn-primary" onclick="publicarAnuncio()">Publicar en Pantallas</button>
+              <button class="btn btn-outline" onclick="limpiarAnuncio()">Eliminar Anuncio Actual</button>
+            </div>
+          </div>
+
+          <!-- Comunicados/Avisos para Dispositivos Móviles (App) -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+                  <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+                  <line x1="12" y1="18" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Publicar Aviso Móvil (App)
+              </h3>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
+              Envíe un aviso emergente que verán los usuarios del POS móvil al iniciar la aplicación.
+            </p>
+
+            <div class="form-group">
+              <label for="txt-notice-title">Título del Aviso</label>
+              <input type="text" id="txt-notice-title" class="input-field" placeholder="Título del aviso"
+                value="Aviso Importante">
+            </div>
+
+            <div class="form-group">
+              <label for="txt-notice-message">Mensaje del Aviso</label>
+              <textarea id="txt-notice-message" class="input-field" rows="3"
+                placeholder="Mensaje del aviso para los usuarios..."
+                style="resize: vertical;"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="txt-notice-target">Licencia Destino (Opcional - Vacío para Todos)</label>
+              <input type="text" id="txt-notice-target" class="input-field"
+                placeholder="Licencia destino (Dejar vacío para enviar a todos)">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <button class="btn btn-primary" onclick="publicarAvisoMovil()">Publicar en Celulares</button>
+              <button class="btn btn-outline" onclick="limpiarAvisoMovil()">Eliminar Aviso Activo</button>
+            </div>
+          </div>
+
+          <!-- Generador de PIN de Recuperación -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title" style="color: var(--success);">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                  </path>
+                </svg>
+                Generador de PIN de Recuperación
+              </h3>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
+              Ingrese el Código de Desafío que le proporcione el cliente en la pantalla de bloqueo para generar su
+              Código de Respuesta.
+            </p>
+
+            <div class="form-group">
+              <label for="txt-challenge-code">Código de Desafío (6 dígitos)</label>
+              <input type="text" id="txt-challenge-code" class="input-field" placeholder="Código de 6 dígitos" maxlength="6"
+                style="text-align: center; font-size: 1.1rem; letter-spacing: 2px;">
+            </div>
+
+            <button class="btn btn-primary" onclick="generarCodigoRespuesta()">
+              Generar Código de Respuesta
+            </button>
+
+            <div id="recovery-result-container"
+              style="display: none; margin-top: 1.25rem; padding: 1rem; border-radius: var(--radius-sm); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); text-align: center;">
+              <p style="font-size: 0.75rem; color: var(--text-soft); margin-bottom: 0.25rem;">CÓDIGO DE RESPUESTA:</p>
+              <span id="lbl-response-code"
+                style="font-size: 2rem; font-weight: bold; color: var(--success); letter-spacing: 4px;">000000</span>
+            </div>
+          </div>
+            <!-- Administración de Catálogos Web (Cloud Firestore) -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" style="color: #38bdf8;">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+                  </svg>
+                  Catálogos Web (Cloud Firestore)
+                </h3>
+              </div>
+
+              <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
+                Consulte o restablezca el PIN de sincronización de la base de datos Firestore del catálogo web.
+              </p>
+
+              <div class="form-group">
+                <label for="txt-firestore-store-id">ID de la Tienda</label>
+                <input type="text" id="txt-firestore-store-id" class="input-field" placeholder="Identificador de tienda"
+                  style="text-align: center;">
+              </div>
+
+              <div class="form-group">
+                <label for="txt-firestore-project-id">Proyecto Firebase (Catálogo)</label>
+                <input type="text" id="txt-firestore-project-id" class="input-field" placeholder="Proyecto Firebase"
+                  value="aurapos-catalogo" style="text-align: center;">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 1rem;">
+                <button class="btn btn-primary" onclick="consultarPinFirestore()">
+                  🔍 Consultar Datos y PIN
+                </button>
+              </div>
+
+              <!-- Contenedor de Resultado de Consulta -->
+              <div id="firestore-query-result"
+                style="display: none; margin-bottom: 1rem; padding: 1rem; border-radius: var(--radius-sm); background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2);">
+                <div
+                  style="font-size: 0.75rem; color: var(--text-soft); margin-bottom: 0.4rem; display: flex; justify-content: space-between;">
+                  <span>Negocio:</span> <span id="lbl-fs-name" style="font-weight: 600; color: #fff;">—</span>
+                </div>
+                <div
+                  style="font-size: 0.75rem; color: var(--text-soft); margin-bottom: 0.4rem; display: flex; justify-content: space-between;">
+                  <span>WhatsApp:</span> <span id="lbl-fs-phone" style="font-weight: 600; color: #fff;">—</span>
+                </div>
+                <div
+                  style="font-size: 0.75rem; color: var(--text-soft); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.4rem; margin-top: 0.4rem;">
+                  <span>PIN Sincro:</span> <span id="lbl-fs-pin"
+                    style="font-size: 1.1rem; font-weight: bold; color: #38bdf8; letter-spacing: 1px;">—</span>
+                </div>
+              </div>
+
+              <!-- Restablecimiento de PIN -->
+              <div style="border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 1rem; margin-top: 0.5rem;">
+                <h4 style="font-size: 0.85rem; color: var(--text-soft); margin-bottom: 0.75rem; font-weight: 600;">
+                  Cambiar PIN en la Nube</h4>
+
+                <div class="form-group">
+                  <label for="txt-firestore-new-pin">Nuevo PIN (4 dígitos)</label>
+                  <input type="text" id="txt-firestore-new-pin" class="input-field" placeholder="PIN de 4 dígitos" maxlength="4"
+                    style="text-align: center; font-size: 1.1rem; letter-spacing: 2px;">
+                </div>
+
+                <div class="form-group">
+                  <label for="txt-firestore-admin-token">Token Secreto de Admin</label>
+                  <input type="password" id="txt-firestore-admin-token" class="input-field" placeholder="Token Secreto"
+                    value="AuraAdminToken2026" style="text-align: center;">
+                </div>
+
+                <button class="btn btn-danger" onclick="cambiarPinFirestore()" id="btn-fs-update">
+                  🔑 Actualizar PIN en la Nube
+                </button>
+              </div>
+            </div>
+
+            <!-- Forzar Actualizaciones -->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" style="color: var(--warning);">
+                  <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                    </path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                  Actualización del Sistema
+                </h3>
+              </div>
+
+              <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
+                Obliga al servidor de la oficina a buscar el último instalador de GitHub Releases y actualizarse
+                inmediatamente.
+              </p>
+
+              <button class="btn btn-danger" onclick="forzarActualizacion()">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                  </path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Forzar Actualización Remota
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pestaña 3: Logs del Sistema -->
+      <div id="tab-logs" class="tab-panel">
+        <!-- Sección de Logs del Sistema -->
+        <div class="card" id="logs-section">
           <div class="card-header">
-            <h3 class="card-title" style="color: var(--warning);">
-              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              Actualización del Sistema
+            <h3 class="card-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" style="color:var(--warning)">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Logs del Sistema
+              <span id="logs-count"
+                style="font-size:0.7rem; font-weight:400; color:var(--text-muted); margin-left:0.4rem;"></span>
             </h3>
+            <div style="display:flex; gap:0.5rem;">
+              <button class="btn-icon" onclick="cargarLogs()" title="Actualizar logs">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 4 23 10 17 10"></polyline>
+                  <polyline points="1 20 1 14 7 14"></polyline>
+                  <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+              </button>
+              <button class="btn-icon btn-icon-danger" onclick="limpiarLogs()" title="Limpiar todos los logs">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                </svg>
+              </button>
+            </div>
           </div>
-          
-          <p style="font-size: 0.8rem; color: var(--text-soft); margin-bottom: 1rem;">
-            Obliga al servidor de la oficina a buscar el último instalador de GitHub Releases y actualizarse inmediatamente.
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+            Errores y advertencias del servidor. Haz clic en una entrada para ver el detalle.
           </p>
-          
-          <button class="btn btn-danger" onclick="forzarActualizacion()">
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-            Forzar Actualización Remota
-          </button>
+          <div class="log-list" id="logs-list">
+            <div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">Cargando logs...
+            </div>
+          </div>
         </div>
+      </div>
 
+      <!-- Pestaña 2: Gestión de Licencias -->
+      <div id="tab-licencias" class="tab-panel">
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <!-- Sección de Licencias                                          -->
+        <!-- ══════════════════════════════════════════════════════════════ -->
+        <div class="card" id="licenses-section">
+          <div class="card-header">
+            <h3 class="card-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary)">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              Gestión de Licencias
+              <span id="licenses-count"
+                style="font-size:0.7rem; font-weight:400; color:var(--text-muted); margin-left:0.4rem;"></span>
+            </h3>
+            <button class="btn-icon" onclick="cargarLicencias()" title="Actualizar lista">
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <polyline points="1 20 1 14 7 14"></polyline>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+
+            <!-- Tabla de Licencias Existentes -->
+            <div>
+              <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+                Lista de clientes con licencias activas. Usa el kill-switch para suspender o reactivar al instante.
+              </p>
+
+              <!-- Desktop -->
+              <div class="table-responsive desktop-only">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Clave</th>
+                      <th>Cliente</th>
+                      <th>Plan</th>
+                      <th>Estado</th>
+                      <th>Web</th>
+                      <th>Expira</th>
+                      <th style="text-align:center;">Activaciones</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="table-licenses-body">
+                    <tr>
+                      <td colspan="8"
+                        style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">Conecta a
+                        Firebase para ver las licencias.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Móvil -->
+              <div class="mobile-only">
+                <div class="terminal-cards-container" id="mobile-licenses-list">
+                  <p style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">Conecta a
+                    Firebase para ver las licencias.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario: Crear Nueva Licencia -->
+            <div
+              style="background:rgba(99,102,241,0.04); border:1px solid rgba(99,102,241,0.15); border-radius:12px; padding:1.25rem;">
+              <h4 style="font-family:'Outfit',sans-serif; font-size:1rem; margin-bottom:1rem; color:var(--text);">
+                🔑 Crear Nueva Licencia
+              </h4>
+
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-cliente">Cliente *</label>
+                  <input type="text" id="lic-cliente" class="input-field" placeholder="Nombre del cliente">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-email">Email</label>
+                  <input type="email" id="lic-email" class="input-field" placeholder="cliente@email.com">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-plan">Plan</label>
+                  <select id="lic-plan" class="input-field" onchange="onPlanChange(this.value)">
+                    <option value="basico">Plan Básico ($15/mes)</option>
+                    <option value="premium" selected>Plan Premium ($25/mes)</option>
+                    <option value="trial">Período de Prueba (Trial)</option>
+                    <option value="demo-7">Demo (7 días)</option>
+                    <option value="demo-15">Demo (15 días)</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-dias">Días de validez</label>
+                  <input type="number" id="lic-dias" class="input-field" value="365" min="1" max="3650">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-activaciones">Máx. activaciones</label>
+                  <input type="number" id="lic-activaciones" class="input-field" value="1" min="1" max="99">
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="lic-notas">Notas internas</label>
+                  <input type="text" id="lic-notas" class="input-field" placeholder="Opcional...">
+                </div>
+                <div class="form-group" style="margin-bottom:0; display:flex; align-items:center; gap:0.6rem; padding-top:1.4rem;">
+                  <input type="checkbox" id="lic-web" style="width:18px; height:18px; accent-color:var(--primary); cursor:pointer;">
+                  <label for="lic-web" style="cursor:pointer; font-weight:600; color:var(--text); font-size:0.85rem; user-select:none;">
+                    🌐 Habilitar Catálogo Web / Tienda Online
+                  </label>
+                </div>
+              </div>
+
+              <button class="btn btn-primary" id="btn-crear-licencia" onclick="crearLicencia()"
+                style="margin-top:1rem;">
+                🔑 Generar y Publicar
+              </button>
+
+              <div id="lic-resultado" style="display:none;"></div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <!-- Sección de Logs del Sistema -->
-    <div class="card" id="logs-section">
-      <div class="card-header">
-        <h3 class="card-title">
-          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:var(--warning)">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          Logs del Sistema
-          <span id="logs-count" style="font-size:0.7rem; font-weight:400; color:var(--text-muted); margin-left:0.4rem;"></span>
-        </h3>
-        <div style="display:flex; gap:0.5rem;">
-          <button class="btn-icon" onclick="cargarLogs()" title="Actualizar logs">
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-          </button>
-          <button class="btn-icon btn-icon-danger" onclick="limpiarLogs()" title="Limpiar todos los logs">
-            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-          </button>
-        </div>
-      </div>
-      <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
-        Errores y advertencias del servidor. Haz clic en una entrada para ver el detalle.
-      </p>
-      <div class="log-list" id="logs-list">
-        <div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">Cargando logs...</div>
-      </div>
-    </div>
 
-  </div>
+    <!-- Contenedor de Toasts -->
+    <div class="toast-container" id="toast-container"></div>
 
-  <!-- Contenedor de Toasts -->
-  <div class="toast-container" id="toast-container"></div>
+    <!-- LÓGICA DE CONTROL REMOTO (JAVASCRIPT) -->
+    <script>
+      let dbUrl = "";
+      let dbSecret = "";
+      let timerRef = null;
+      let licenciasCachedData = {};
 
-  <!-- LÓGICA DE CONTROL REMOTO (JAVASCRIPT) -->
-  <script>
-    let dbUrl = "";
-    let dbSecret = "";
-    let timerRef = null;
-
-    // Al cargar la página
-    window.addEventListener('DOMContentLoaded', () => {
-      // Intentar cargar credenciales del localStorage
-      const savedUrl = localStorage.getItem('remote_fb_url');
-      const savedSecret = localStorage.getItem('remote_fb_secret');
-      
-      if (savedUrl) {
-        document.getElementById('fb-url').value = savedUrl;
-        document.getElementById('fb-secret').value = savedSecret || '';
-        dbUrl = savedUrl;
-        dbSecret = savedSecret || '';
-        
-        // Autoconectar
-        conectarFirebase();
-      }
-    });
-
-    function showToast(message, type = 'info') {
-      const container = document.getElementById('toast-container');
-      const toast = document.createElement('div');
-      toast.className = `toast toast-${type}`;
-      
-      // Iconos para el Toast
-      let icon = '';
-      if (type === 'success') icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-      else if (type === 'error') icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
-      else icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="12" x2="12" y2="16"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
-
-      toast.innerHTML = `${icon} <span>${message}</span>`;
-      container.appendChild(toast);
-      
-      // Activar animación
-      setTimeout(() => toast.classList.add('show'), 10);
-      
-      // Remover tras 3.5 segundos
-      setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-      }, 3500);
-    }
-
-    async function fetchFirebase(path, method = 'GET', body = null) {
-      let url = dbUrl.trim();
-      if (!url.endsWith('/')) url += '/';
-      url += path.replace(/^\//, '');
-      
-      if (dbSecret) {
-        url += (url.includes('?') ? '&' : '?') + `auth=${dbSecret}`;
+      function formatLocalYMD(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, '0');
+        const d = String(date.getDate()).padStart(2, '0');
+        return `${y}-${m}-${d}`;
       }
 
-      const options = { method, headers: { 'Content-Type': 'application/json' } };
-      if (body !== null) {
-        options.body = JSON.stringify(body);
+      async function registrarAuditoria(clave, accion, detalles) {
+        if (!dbUrl) return;
+        const ahora = new Date();
+        const logId = "audit_" + ahora.getTime();
+        const logEntry = {
+          timestamp: ahora.toISOString(),
+          fecha: formatLocalYMD(ahora),
+          usuario: "Administrador",
+          clave: clave || 'N/A',
+          accion: accion,
+          detalles: detalles
+        };
+
+        const updates = {};
+        updates[`auditoria/${logId}`] = logEntry;
+        if (clave) {
+          updates[`licencias/${clave}/auditoria/${logId}`] = logEntry;
+        }
+
+        try {
+          await fetchFirebase('.json', 'PATCH', updates);
+        } catch (e) {
+          console.error("Error al registrar auditoría:", e);
+        }
       }
 
-      const response = await fetch(url, options);
-      if (!response.ok) {
-        const errText = await response.text();
-        throw new Error(errText || `Error HTTP ${response.status}`);
-      }
-      return response.json();
-    }
+      // Control de Navegación por Pestañas
+      function switchTab(tabId) {
+        // Ocultar todos los paneles
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+          panel.classList.remove('active');
+        });
+        // Desactivar todos los botones
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
 
-    async function conectarFirebase() {
-      const urlInput = document.getElementById('fb-url').value.trim();
-      const secretInput = document.getElementById('fb-secret').value.trim();
+        // Mostrar panel actual
+        const targetPanel = document.getElementById(tabId);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
 
-      if (!urlInput) {
-        showToast("Por favor ingrese la URL de Firebase.", "error");
-        return;
-      }
+        // Activar botón actual
+        const targetBtn = document.getElementById(`btn-${tabId}`);
+        if (targetBtn) {
+          targetBtn.classList.add('active');
+        }
 
-      dbUrl = urlInput;
-      dbSecret = secretInput;
+        // Guardar estado
+        sessionStorage.setItem('active_remote_tab', tabId);
 
-      const loginOverlay = document.getElementById('login-overlay');
-      const btn = loginOverlay.querySelector('button');
-      btn.disabled = true;
-      btn.innerText = "Verificando...";
-
-      try {
-        await fetchFirebase('anuncio.json');
-        
-        localStorage.setItem('remote_fb_url', dbUrl);
-        localStorage.setItem('remote_fb_secret', dbSecret);
-        
-        loginOverlay.classList.remove('active');
-        showToast("Conexión con la nube exitosa.", "success");
-        
+        // Cargar datos inmediatamente al cambiar de pestaña
         cargarDatos();
-        
-        if (timerRef) clearInterval(timerRef);
-        timerRef = setInterval(cargarDatos, 10000);
-        
-      } catch (e) {
-        console.error(e);
-        showToast(`Fallo en la conexión: ${e.message}`, "error");
-        localStorage.removeItem('remote_fb_url');
-        localStorage.removeItem('remote_fb_secret');
-      } finally {
-        btn.disabled = false;
-        btn.innerText = "Conectar Panel";
       }
-    }
 
-    function desconectar() {
-      localStorage.removeItem('remote_fb_url');
-      localStorage.removeItem('remote_fb_secret');
-      dbUrl = "";
-      dbSecret = "";
-      if (timerRef) clearInterval(timerRef);
-      document.getElementById('login-overlay').classList.add('active');
-      showToast("Desconectado de la base de datos.", "info");
-    }
+      // Al cargar la página
+      window.addEventListener('DOMContentLoaded', () => {
+        // Cargar pestaña activa o usar la por defecto (Equipos)
+        const savedTab = sessionStorage.getItem('active_remote_tab');
+        if (savedTab) {
+          switchTab(savedTab);
+        } else {
+          switchTab('tab-terminales');
+        }
 
-    function escapeHTML(str) {
-      if (!str) return '';
-      return str.replace(/[&<>'"]/g, 
-        tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-      );
-    }
+        // Si se accede a través del backend de Flask como proxy
+        if (window.location.pathname === '/admin/dashboard_remoto') {
+          dbUrl = "/api/proxy/firebase";
+          dbSecret = ""; // El secret se gestiona en el backend
 
-    async function cargarDatos() {
-      if (!dbUrl) return;
-      
-      try {
-        // 1. Cargar anuncio actual (SOLO SI EL USUARIO NO ESTÁ ESCRIBIENDO)
-        const txtArea = document.getElementById('txt-anuncio');
-        if (txtArea && document.activeElement !== txtArea) {
-          const anuncio = await fetchFirebase('anuncio.json');
-          if (anuncio && anuncio.mensaje) {
-            txtArea.value = anuncio.mensaje;
-          } else if (typeof anuncio === 'string') {
-            txtArea.value = anuncio;
-          } else {
-            txtArea.value = '';
+          // Conectar automáticamente y saltarse el login overlay de Firebase
+          const loginOverlay = document.getElementById('login-overlay');
+          if (loginOverlay) {
+            loginOverlay.classList.remove('active');
+          }
+
+          cargarDatos();
+          limpiarTerminalesInactivas();
+
+          if (timerRef) clearInterval(timerRef);
+          timerRef = setInterval(cargarDatos, 10000);
+        } else {
+          // Fallback local: Cargar credenciales del localStorage si no es por proxy
+          const savedUrl = localStorage.getItem('remote_fb_url');
+          const savedSecret = localStorage.getItem('remote_fb_secret');
+
+          if (savedUrl) {
+            document.getElementById('fb-url').value = savedUrl;
+            document.getElementById('fb-secret').value = savedSecret || '';
+            dbUrl = savedUrl;
+            dbSecret = savedSecret || '';
+
+            // Autoconectar
+            conectarFirebase();
+          }
+        }
+      });
+
+      function showToast(message, type = 'info') {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+
+        // Iconos para el Toast
+        let icon = '';
+        if (type === 'success') icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        else if (type === 'error') icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+        else icon = '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="12" x2="12" y2="16"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+
+        toast.innerHTML = `${icon} <span>${message}</span>`;
+        container.appendChild(toast);
+
+        // Activar animación
+        setTimeout(() => toast.classList.add('show'), 10);
+
+        // Remover tras 3.5 segundos
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 300);
+        }, 3500);
+      }
+
+      async function fetchFirebase(path, method = 'GET', body = null) {
+        let url = "";
+        if (dbUrl === "/api/proxy/firebase") {
+          url = `/api/proxy/firebase/${path.replace(/^\//, '')}`;
+        } else {
+          url = dbUrl.trim();
+          if (!url.endsWith('/')) url += '/';
+          url += path.replace(/^\//, '');
+
+          if (dbSecret) {
+            url += (url.includes('?') ? '&' : '?') + `auth=${dbSecret}`;
           }
         }
 
-        // 2. Cargar listado de terminales
-        const terminals = await fetchFirebase('terminals.json');
-        const tbody = document.querySelector('#table-terminals tbody');
-        const mobileContainer = document.getElementById('mobile-terminals-list');
-        
-        if (!terminals || Object.keys(terminals).length === 0) {
-          const emptyStateHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-soft);">No hay terminales registradas en Firebase.</td></tr>`;
-          if (tbody) tbody.innerHTML = emptyStateHTML;
-          if (mobileContainer) mobileContainer.innerHTML = `<div style="text-align: center; color: var(--text-soft); padding: 2rem;">No hay terminales registradas.</div>`;
+        const options = { method, headers: { 'Content-Type': 'application/json' } };
+        if (body !== null) {
+          options.body = JSON.stringify(body);
+        }
+
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          const errText = await response.text();
+          throw new Error(errText || `Error HTTP ${response.status}`);
+        }
+        return response.json();
+      }
+
+      async function conectarFirebase() {
+        const urlInput = document.getElementById('fb-url').value.trim();
+        const secretInput = document.getElementById('fb-secret').value.trim();
+
+        if (!urlInput) {
+          showToast("Por favor ingrese la URL de Firebase.", "error");
           return;
         }
-        
-        let tableHTML = '';
-        let cardsHTML = '';
-        const now = new Date();
-        
-        const termList = Object.entries(terminals).map(([key, val]) => ({ key, ...val }));
-        termList.sort((a, b) => (b.es_servidor || false) - (a.es_servidor || false));
 
-        termList.forEach(t => {
-          let online = false;
-          let tiempoRel = "Nunca";
-          
-          if (t.ultima_conexion) {
-            try {
-              const ultCon = new Date(t.ultima_conexion.replace(/-/g, '/'));
-              const diffSecs = Math.floor((now - ultCon) / 1000);
-              
-              online = (t.online !== false) && (diffSecs < 70);
-              
-              if (diffSecs < 60) {
-                tiempoRel = `Hace ${Math.max(0, diffSecs)}s`;
-              } else if (diffSecs < 3600) {
-                tiempoRel = `Hace ${Math.floor(diffSecs / 60)}m`;
-              } else if (diffSecs < 86400) {
-                tiempoRel = `Hace ${Math.floor(diffSecs / 3600)}h`;
+        dbUrl = urlInput;
+        dbSecret = secretInput;
+
+        const loginOverlay = document.getElementById('login-overlay');
+        const btn = loginOverlay.querySelector('button');
+        btn.disabled = true;
+        btn.innerText = "Verificando...";
+
+        try {
+          await fetchFirebase('anuncio.json');
+
+          localStorage.setItem('remote_fb_url', dbUrl);
+          localStorage.setItem('remote_fb_secret', dbSecret);
+
+          loginOverlay.classList.remove('active');
+          showToast("Conexión con la nube exitosa.", "success");
+
+          cargarDatos();
+          limpiarTerminalesInactivas();
+
+          if (timerRef) clearInterval(timerRef);
+          timerRef = setInterval(cargarDatos, 10000);
+
+        } catch (e) {
+          console.error(e);
+          showToast(`Fallo en la conexión: ${e.message}`, "error");
+          localStorage.removeItem('remote_fb_url');
+          localStorage.removeItem('remote_fb_secret');
+        } finally {
+          btn.disabled = false;
+          btn.innerText = "Conectar Panel";
+        }
+      }
+
+      function desconectar() {
+        localStorage.removeItem('remote_fb_url');
+        localStorage.removeItem('remote_fb_secret');
+        dbUrl = "";
+        dbSecret = "";
+        if (timerRef) clearInterval(timerRef);
+        document.getElementById('login-overlay').classList.add('active');
+        showToast("Desconectado de la base de datos.", "info");
+      }
+
+      function escapeHTML(str) {
+        if (str === null || str === undefined) return '';
+        const s = String(str);
+        return s.replace(/[&<>'"]/g,
+          tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+        );
+      }
+
+      async function cargarDatos() {
+        if (!dbUrl) return;
+
+        try {
+          const activeTab = sessionStorage.getItem('active_remote_tab') || 'tab-terminales';
+
+          if (activeTab === 'tab-terminales') {
+            // 1. Cargar anuncio actual (SOLO SI EL USUARIO NO ESTÁ ESCRIBIENDO)
+            const txtArea = document.getElementById('txt-anuncio');
+            if (txtArea && document.activeElement !== txtArea) {
+              const anuncio = await fetchFirebase('anuncio.json');
+              if (anuncio && anuncio.mensaje) {
+                txtArea.value = anuncio.mensaje;
+              } else if (typeof anuncio === 'string') {
+                txtArea.value = anuncio;
               } else {
-                tiempoRel = t.ultima_conexion.substring(0, 16);
+                txtArea.value = '';
               }
-            } catch (e) {
-              tiempoRel = t.ultima_conexion;
             }
-          }
-          
-          const dotClass = online ? 'status-online' : 'status-offline';
-          const statusText = online ? 'Online' : 'Offline';
-          const blockedChecked = t.bloqueado ? 'checked' : '';
-          
-          const serverBadge = t.es_servidor 
-            ? '<span class="badge badge-primary" style="margin-left:0.3rem">Servidor</span>' 
-            : '<span class="badge badge-success" style="margin-left:0.3rem">Cliente</span>';
-          
-          // RENDER TABLA (ESCRITORIO)
-          tableHTML += `
-            <tr id="row-${t.key}">
-              <td>
-                <span class="terminal-name">${escapeHTML(t.nombre_equipo || t.key)}</span>
-                ${serverBadge}
-              </td>
-              <td>${escapeHTML(t.usuario || 'Ninguno')}</td>
-              <td><code>v${escapeHTML(t.version || '1.0.0')}</code></td>
-              <td>${escapeHTML(tiempoRel)}</td>
-              <td>
-                <div class="status-container">
-                  <span class="status-dot ${dotClass}"></span>
-                  <span>${statusText}</span>
-                </div>
-              </td>
-              <td style="text-align: center;">
-                <label class="switch switch-lock">
-                  <input type="checkbox" ${blockedChecked} onchange="toggleBloqueo('${t.key}', this.checked)">
-                  <span class="slider"></span>
-                </label>
-              </td>
-              <td>
-                <div class="row-actions">
-                  <button class="btn-icon btn-icon-danger" onclick="eliminarTerminal('${t.key}')" title="Eliminar Registro">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          `;
 
-          // RENDER TARJETAS (MÓVIL)
-          cardsHTML += `
-            <div class="terminal-card" id="card-${t.key}">
-              <div class="t-card-row">
-                <span class="terminal-name" style="font-size: 1rem;">${escapeHTML(t.nombre_equipo || t.key)}</span>
-                ${serverBadge}
-              </div>
-              <div class="t-card-details">
-                <div class="t-card-detail-item">
-                  <span>Usuario</span>
-                  <span>${escapeHTML(t.usuario || 'Ninguno')}</span>
-                </div>
-                <div class="t-card-detail-item">
-                  <span>Versión</span>
-                  <span><code>v${escapeHTML(t.version || '1.0.0')}</code></span>
-                </div>
-                <div class="t-card-detail-item">
-                  <span>IP Local</span>
-                  <span><code>${escapeHTML(t.ip_local || 'Desconocida')}</code></span>
-                </div>
-                <div class="t-card-detail-item">
-                  <span>Contacto</span>
-                  <span>${escapeHTML(tiempoRel)}</span>
-                </div>
-              </div>
-              <div class="t-card-row" style="margin-top: 0.25rem;">
-                <div class="status-container">
-                  <span class="status-dot ${dotClass}"></span>
-                  <span style="font-size: 0.8rem; font-weight: 500;">${statusText}</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                  <span style="font-size: 0.75rem; color: var(--text-soft); font-weight: 500;">Bloqueado:</span>
+            // 1b. Cargar aviso móvil actual (SOLO SI EL USUARIO NO ESTÁ ESCRIBIENDO)
+            const noticeTitle = document.getElementById('txt-notice-title');
+            const noticeMsg = document.getElementById('txt-notice-message');
+            const noticeTarget = document.getElementById('txt-notice-target');
+            if (noticeTitle && noticeMsg && noticeTarget &&
+              document.activeElement !== noticeTitle &&
+              document.activeElement !== noticeMsg &&
+              document.activeElement !== noticeTarget) {
+              try {
+                const notice = await fetchFirebase('app_settings/notice.json');
+                if (notice && typeof notice === 'object') {
+                  noticeTitle.value = notice.titulo || '';
+                  noticeMsg.value = notice.mensaje || '';
+                  noticeTarget.value = notice.target_licencia || '';
+                } else {
+                  noticeTitle.value = 'Aviso Importante';
+                  noticeMsg.value = '';
+                  noticeTarget.value = '';
+                }
+              } catch (err) {
+                // Si no existe el nodo o hay error, limpiar
+                noticeTitle.value = 'Aviso Importante';
+                noticeMsg.value = '';
+                noticeTarget.value = '';
+              }
+            }
+
+            // 2. Cargar listado de terminales
+            const terminals = await fetchFirebase('terminals.json');
+            const tbody = document.querySelector('#table-terminals tbody');
+            const mobileContainer = document.getElementById('mobile-terminals-list');
+
+            if (!terminals || Object.keys(terminals).length === 0) {
+              const emptyStateHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-soft);">No hay terminales registradas en Firebase.</td></tr>`;
+              if (tbody) tbody.innerHTML = emptyStateHTML;
+              if (mobileContainer) mobileContainer.innerHTML = `<div style="text-align: center; color: var(--text-soft); padding: 2rem;">No hay terminales registradas.</div>`;
+              return;
+            }
+
+            let tableHTML = '';
+            let cardsHTML = '';
+            const now = new Date();
+
+            const termList = Object.entries(terminals).map(([key, val]) => ({ key, ...val }));
+            termList.sort((a, b) => (b.es_servidor || false) - (a.es_servidor || false));
+
+            // Actualizar banner de solicitudes de demo pendientes
+            const pendientes = termList.filter(t => (t.tipo_instalacion === 'demo' || t.aprobado === false) && t.aprobado === false).length;
+            const bannerEl = document.getElementById('pending-demos-banner');
+            if (bannerEl) {
+              if (pendientes > 0) {
+                bannerEl.style.display = 'block';
+                bannerEl.innerHTML = `
+                  <div style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); color: #fbbf24; padding: 0.85rem 1.25rem; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between; font-size: 0.875rem;">
+                    <span>⚠️ Tienes <strong>${pendientes}</strong> solicitud(es) de Demo Desktop esperando tu aprobación.</span>
+                    <span style="font-size: 0.75rem; color: var(--text-soft);">Revisa el botón 'Aprobar Demo' en la tabla inferior</span>
+                  </div>
+                `;
+              } else {
+                bannerEl.style.display = 'none';
+              }
+            }
+
+            termList.forEach(t => {
+              let online = false;
+              let tiempoRel = "Nunca";
+
+              if (t.ultima_conexion) {
+                try {
+                  // Python isoformat() emite 6 decimales (microsegundos), JS Date solo acepta 3 (milisegundos).
+                  // Truncar a 3 decimales para evitar Invalid Date y diffSecs = NaN.
+                  const tsClean = t.ultima_conexion
+                    .replace(/(\.\d{3})\d+/, '$1')   // .473000 → .473
+                    .replace(' ', 'T');               // soporte para formato con espacio
+                  const ultCon = new Date(tsClean);
+                  const diffSecs = isNaN(ultCon) ? 9999 : Math.floor((now - ultCon) / 1000);
+
+                  const hasExpiry = t.expires_at && !isNaN(new Date(t.expires_at));
+                  online = hasExpiry
+                    ? new Date(t.expires_at) > now          // TTL-based (nuevo)
+                    : (t.online !== false) && (diffSecs < 150); // fallback legado
+
+                  if (diffSecs < 60) {
+                    tiempoRel = `Hace ${Math.max(0, diffSecs)}s`;
+                  } else if (diffSecs < 3600) {
+                    tiempoRel = `Hace ${Math.floor(diffSecs / 60)}m`;
+                  } else if (diffSecs < 86400) {
+                    tiempoRel = `Hace ${Math.floor(diffSecs / 3600)}h`;
+                  } else {
+                    tiempoRel = t.ultima_conexion.substring(0, 16);
+                  }
+                } catch (e) {
+                  tiempoRel = t.ultima_conexion;
+                }
+              }
+
+              const dotClass = online ? 'status-online' : 'status-offline';
+              let dteStatusBadge = '';
+              if (t.borrar_dte === true) {
+                dteStatusBadge = '<span class="badge" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);color:#fbbf24;font-size:0.65rem;margin-left:0.3rem;">Wipe DTE...</span>';
+              } else if (t.dte_borrado_confirmado === true) {
+                dteStatusBadge = '<span class="badge badge-success" style="font-size:0.65rem;margin-left:0.3rem;">✓ DTE Limpio</span>';
+              }
+
+              const statusText = online ? 'Online' : 'Offline';
+              const blockedChecked = t.bloqueado ? 'checked' : '';
+
+              const serverBadge = t.es_servidor
+                ? '<span class="badge badge-primary" style="margin-left:0.3rem">Servidor</span>'
+                : '<span class="badge badge-success" style="margin-left:0.3rem">Cliente</span>';
+
+              let demoBadge = '';
+              let btnAprobarDemo = '';
+              if (t.tipo_instalacion === 'demo' || t.aprobado !== undefined) {
+                if (t.aprobado === false) {
+                  demoBadge = '<span class="badge" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fbbf24;font-size:0.65rem;margin-left:0.3rem;">🟡 Demo Pendiente</span>';
+                  btnAprobarDemo = `<button class="btn btn-sm btn-primary" style="padding:0.25rem 0.5rem;font-size:0.75rem;margin-right:0.35rem;display:inline-flex;align-items:center;gap:3px;" onclick="aprobarDemo('${t.key}')" title="Aprobar 15 días de Demo">✅ Aprobar Demo</button>`;
+                } else if (t.aprobado === true) {
+                  const dias = t.dias_demo || 15;
+                  demoBadge = `<span class="badge badge-success" style="font-size:0.65rem;margin-left:0.3rem;">✓ Demo (${dias}d)</span>`;
+                }
+              }
+
+              // RENDER TABLA (ESCRITORIO)
+              tableHTML += `
+              <tr id="row-${t.key}">
+                <td>
+                  <span class="terminal-name">${escapeHTML(t.nombre_equipo || t.key)}</span>
+                  ${serverBadge}
+                  ${dteStatusBadge}
+                  ${demoBadge}
+                </td>
+                <td>${escapeHTML(t.usuario || 'Ninguno')}</td>
+                <td><code>v${escapeHTML(t.version || '1.0.0')}</code></td>
+                <td>${escapeHTML(tiempoRel)}</td>
+                <td>
+                  <div class="status-container">
+                    <span class="status-dot ${dotClass}"></span>
+                    <span>${statusText}</span>
+                  </div>
+                </td>
+                <td style="text-align: center;">
                   <label class="switch switch-lock">
                     <input type="checkbox" ${blockedChecked} onchange="toggleBloqueo('${t.key}', this.checked)">
                     <span class="slider"></span>
                   </label>
-                  <button class="btn-icon btn-icon-danger" onclick="eliminarTerminal('${t.key}')" title="Eliminar Registro" style="margin-left: 0.25rem;">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                  </button>
+                </td>
+                <td>
+                  <div class="row-actions">
+                    ${btnAprobarDemo}
+                    <button class="btn-icon btn-icon-danger" onclick="eliminarTerminal('${t.key}')" title="Eliminar Registro">
+                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            `;
+
+              // RENDER TARJETAS (MÓVIL)
+              cardsHTML += `
+              <div class="terminal-card" id="card-${t.key}">
+                <div class="t-card-row">
+                  <div>
+                    <span class="terminal-name" style="font-size: 1rem;">${escapeHTML(t.nombre_equipo || t.key)}</span>
+                    ${serverBadge}
+                    ${demoBadge}
+                  </div>
+                  ${dteStatusBadge}
+                </div>
+                <div class="t-card-details">
+                  <div class="t-card-detail-item">
+                    <span>Usuario</span>
+                    <span>${escapeHTML(t.usuario || 'Ninguno')}</span>
+                  </div>
+                  <div class="t-card-detail-item">
+                    <span>Versión</span>
+                    <span><code>v${escapeHTML(t.version || '1.0.0')}</code></span>
+                  </div>
+                  <div class="t-card-detail-item">
+                    <span>IP Local</span>
+                    <span><code>${escapeHTML(t.ip_local || 'Desconocida')}</code></span>
+                  </div>
+                  <div class="t-card-detail-item">
+                    <span>Contacto</span>
+                    <span>${escapeHTML(tiempoRel)}</span>
+                  </div>
+                </div>
+                <div class="t-card-row" style="margin-top: 0.25rem;">
+                  <div class="status-container">
+                    <span class="status-dot ${dotClass}"></span>
+                    <span style="font-size: 0.8rem; font-weight: 500;">${statusText}</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                    ${btnAprobarDemo}
+                    <span style="font-size: 0.75rem; color: var(--text-soft); font-weight: 500;">Bloqueado:</span>
+                    <label class="switch switch-lock">
+                      <input type="checkbox" ${blockedChecked} onchange="toggleBloqueo('${t.key}', this.checked)">
+                      <span class="slider"></span>
+                    </label>
+                    <button class="btn-icon btn-icon-danger" onclick="eliminarTerminal('${t.key}')" title="Eliminar Registro">
+                      <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          `;
-        });
-        
-        if (tbody) tbody.innerHTML = tableHTML;
-        if (mobileContainer) mobileContainer.innerHTML = cardsHTML;
+            `;
+            });
 
-        // Actualizar logs del sistema
-        await cargarLogs();
-        
-      } catch (e) {
-        console.error("Error al refrescar dashboard:", e);
-        showToast("Error al refrescar listado en tiempo real.", "error");
-      }
-    }
-
-    async function toggleBloqueo(key, blocked) {
-      try {
-        await fetchFirebase(`terminals/${key}.json`, 'PATCH', { 
-          bloqueado: blocked,
-          autorizado: !blocked 
-        });
-        
-        if (blocked) {
-          showToast(`Terminal '${key}' bloqueada.`, "warning");
-        } else {
-          showToast(`Terminal '${key}' autorizada.`, "success");
+            if (tbody) tbody.innerHTML = tableHTML;
+            if (mobileContainer) mobileContainer.innerHTML = cardsHTML;
+          } else if (activeTab === 'tab-licencias') {
+            const lbody = document.getElementById('table-licenses-body');
+            if (!lbody || lbody.innerHTML.includes('Conecta a Firebase') || lbody.innerHTML.includes('Cargando licencias')) {
+              await cargarLicencias();
+            }
+          } else if (activeTab === 'tab-logs') {
+            await cargarLogs();
+          }
+        } catch (e) {
+          console.error("Error al refrescar dashboard:", e);
+          showToast("Error al refrescar listado.", "error");
         }
-        cargarDatos();
-      } catch (e) {
-        console.error(e);
-        showToast("No se pudo cambiar el estado de bloqueo.", "error");
-        cargarDatos();
       }
-    }
 
-    async function eliminarTerminal(key) {
-      if (!confirm(`¿Está seguro de eliminar el registro de '${key}' de la lista?`)) {
-        return;
-      }
-      try {
-        await fetchFirebase(`terminals/${key}.json`, 'DELETE');
-        showToast(`Registro de terminal '${key}' eliminado.`, "info");
-        cargarDatos();
-      } catch (e) {
-        console.error(e);
-        showToast("Error al eliminar la terminal.", "error");
-      }
-    }
+      async function toggleBloqueo(key, blocked) {
+        try {
+          await fetchFirebase(`terminals/${key}.json`, 'PATCH', {
+            bloqueado: blocked,
+            autorizado: !blocked
+          });
 
-    async function publicarAnuncio() {
-      const msg = document.getElementById('txt-anuncio').value.trim();
-      if (!msg) {
-        showToast("Por favor escriba un anuncio antes de publicar.", "error");
-        return;
+          if (blocked) {
+            showToast(`Terminal '${key}' bloqueada.`, "warning");
+          } else {
+            showToast(`Terminal '${key}' autorizada.`, "success");
+          }
+          cargarDatos();
+        } catch (e) {
+          console.error(e);
+          showToast("No se pudo cambiar el estado de bloqueo.", "error");
+          cargarDatos();
+        }
       }
-      
-      try {
-        const payload = {
-          mensaje: msg,
-          mensaje_id: "fb_" + Date.now()
-        };
-        await fetchFirebase('anuncio.json', 'PUT', payload);
-        showToast("Anuncio de mejoras publicado en todas las terminales.", "success");
-      } catch (e) {
-        console.error(e);
-        showToast("No se pudo publicar el anuncio.", "error");
+
+      window.aprobarDemo = async function(key, dias = 15) {
+        if (!confirm(`¿Aprobar la versión Demo por ${dias} días para la terminal '${key}'?`)) {
+          return;
+        }
+        try {
+          const ahora = new Date().toISOString();
+          await fetchFirebase(`terminals/${key}.json`, 'PATCH', {
+            aprobado: true,
+            estado_aprobacion: 'aprobado',
+            dias_demo: dias,
+            aprobado_el: ahora,
+            bloqueado: false
+          });
+          showToast(`¡Demo aprobada por ${dias} días para '${key}'!`, 'success');
+          await registrarAuditoria('SISTEMA', 'Demo Aprobada', `Se aprobaron ${dias} días de demo para la terminal '${key}'.`);
+          cargarDatos();
+        } catch (e) {
+          console.error(e);
+          showToast('Error al aprobar la demo: ' + e.message, 'error');
+        }
+      };
+
+      async function desvincularTerminalDeLicencia(clave, machineId, hostname) {
+        if (!confirm(`¿Está seguro de desvincular el equipo '${hostname}' (ID: ${machineId}) de la licencia ${clave}?\n\nEsto liberará un cupo de activación y eliminará el registro de conexión del equipo.`)) {
+          return;
+        }
+        try {
+          const currentActivaciones = (licenciasCachedData[clave] && licenciasCachedData[clave].activaciones) || 0;
+          const newActivaciones = Math.max(0, currentActivaciones - 1);
+
+          const updates = {};
+          updates[`licencias/${clave}/activaciones_detalle/${machineId}`] = null;
+          updates[`licencias/${clave}/activaciones`] = newActivaciones;
+          updates[`terminals/${machineId}`] = null;
+
+          await fetchFirebase('.json', 'PATCH', updates);
+
+          // Registrar en auditoría
+          await registrarAuditoria(clave, "Equipo Desvinculado", `Se desvinculó el equipo '${hostname}' (ID: ${machineId}). Contador de activaciones reducido a ${newActivaciones}.`);
+
+          showToast("Equipo desvinculado con éxito.", "success");
+
+          // Recargar datos de ambas vistas
+          cargarLicencias();
+          cargarDatos();
+        } catch (e) {
+          console.error(e);
+          showToast("Error al desvincular el equipo.", "error");
+        }
       }
-    }
 
-    async function limpiarAnuncio() {
-      try {
-        await fetchFirebase('anuncio.json', 'PUT', "");
-        document.getElementById('txt-anuncio').value = '';
-        showToast("Anuncio eliminado de la nube.", "info");
-      } catch (e) {
-        console.error(e);
-        showToast("No se pudo limpiar el anuncio.", "error");
+      async function eliminarTerminal(key) {
+        if (!confirm(`¿Está seguro de eliminar el registro de '${key}' de la lista?`)) {
+          return;
+        }
+        try {
+          await fetchFirebase(`terminals/${key}.json`, 'DELETE');
+          showToast(`Registro de terminal '${key}' eliminado.`, "info");
+          cargarDatos();
+        } catch (e) {
+          console.error(e);
+          showToast("Error al eliminar la terminal.", "error");
+        }
       }
-    }
 
-    async function forzarActualizacion() {
-      if (!confirm("¿Está seguro de forzar la actualización de todas las terminales remotas?")) {
-        return;
+      let limpiezaRealizada = false;
+
+      async function limpiarTerminalesInactivas() {
+        if (limpiezaRealizada || !dbUrl) return;
+        limpiezaRealizada = true; // Asegurar que solo corra una vez por carga de página
+
+        try {
+          const [terminals, licencias] = await Promise.all([
+            fetchFirebase('terminals.json').catch(() => null),
+            fetchFirebase('licencias.json').catch(() => null)
+          ]);
+
+          if (!terminals) return;
+
+          const now = new Date();
+          const updates = {};
+          let contadorLimpiados = 0;
+
+          // Inicializar contadores de activaciones de licencias
+          const licActivas = {};
+          if (licencias) {
+            Object.entries(licencias).forEach(([clave, lic]) => {
+              if (!lic) return;
+              licActivas[clave] = lic.activaciones || 0;
+            });
+          }
+
+          Object.entries(terminals).forEach(([machId, t]) => {
+            if (!t.ultima_conexion) return;
+
+            try {
+              // Limpiar y parsear fecha
+              const tsClean = t.ultima_conexion
+                .replace(/(\.\d{3})\d+/, '$1')
+                .replace(' ', 'T');
+              const ultCon = new Date(tsClean);
+              if (isNaN(ultCon)) return;
+
+              const diffMs = now - ultCon;
+              const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+              if (diffDays > 5) {
+                // Terminal inactiva por más de 5 días
+                updates[`terminals/${machId}`] = null;
+                contadorLimpiados++;
+
+                // Buscar si está vinculada a alguna licencia
+                if (licencias) {
+                  Object.entries(licencias).forEach(([clave, lic]) => {
+                    if (lic && lic.activaciones_detalle && lic.activaciones_detalle[machId]) {
+                      updates[`licencias/${clave}/activaciones_detalle/${machId}`] = null;
+                      licActivas[clave] = Math.max(0, licActivas[clave] - 1);
+                      updates[`licencias/${clave}/activaciones`] = licActivas[clave];
+                    }
+                  });
+                }
+              }
+            } catch (e) {
+              console.error("Error al verificar inactividad de terminal:", machId, e);
+            }
+          });
+
+          if (contadorLimpiados > 0) {
+            await fetchFirebase('.json', 'PATCH', updates);
+
+            // Registrar en auditoría
+            await registrarAuditoria('SISTEMA', "Limpieza Automática", `Se eliminaron ${contadorLimpiados} terminal(es) inactivas por más de 5 días.`);
+
+            showToast(`Limpieza automática: se eliminaron ${contadorLimpiados} equipos inactivos.`, "info");
+
+            // Recargar las vistas
+            cargarDatos();
+            if (sessionStorage.getItem('active_remote_tab') === 'tab-licencias') {
+              cargarLicencias();
+            }
+          }
+        } catch (err) {
+          console.error("Error en la limpieza automática de inactivos:", err);
+        }
       }
-      try {
-        const updateId = String(Date.now());
-        await fetchFirebase('forzar_update_id.json', 'PUT', updateId);
-        showToast("Orden de actualización forzada enviada.", "success");
-      } catch (e) {
-        console.error(e);
-        showToast("Error al ordenar la actualización.", "error");
+
+      async function forzarBorradoDte(key) {
+        if (!confirm(`¿Está seguro de forzar el borrado remoto de certificados DTE para la terminal '${key}'?`)) {
+          return;
+        }
+        try {
+          await fetchFirebase(`terminals/${key}.json`, 'PATCH', {
+            borrar_dte: true,
+            dte_borrado_confirmado: false
+          });
+          showToast(`Orden de borrado de firma DTE enviada a '${key}'.`, "warning");
+          cargarDatos();
+        } catch (e) {
+          console.error(e);
+          showToast("Error al enviar orden de borrado de firma DTE.", "error");
+        }
       }
-    }
 
-    // ── Logs del Sistema ─────────────────────────────────────────────
+      async function publicarAnuncio() {
+        const msg = document.getElementById('txt-anuncio').value.trim();
+        if (!msg) {
+          showToast("Por favor escriba un anuncio antes de publicar.", "error");
+          return;
+        }
 
-    function renderLogs(logsObj) {
-      const container = document.getElementById('logs-list');
-      const countEl   = document.getElementById('logs-count');
+        try {
+          const payload = {
+            mensaje: msg,
+            mensaje_id: "fb_" + Date.now()
+          };
+          await fetchFirebase('anuncio.json', 'PUT', payload);
+          showToast("Anuncio de mejoras publicado en todas las terminales.", "success");
+        } catch (e) {
+          console.error(e);
+          showToast("No se pudo publicar el anuncio.", "error");
+        }
+      }
 
-      if (!logsObj || Object.keys(logsObj).length === 0) {
-        container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">
-          ✅ Sin errores registrados.
+      async function limpiarAnuncio() {
+        try {
+          await fetchFirebase('anuncio.json', 'PUT', "");
+          document.getElementById('txt-anuncio').value = '';
+          showToast("Anuncio eliminado de la nube.", "info");
+        } catch (e) {
+          console.error(e);
+          showToast("No se pudo limpiar el anuncio.", "error");
+        }
+      }
+
+      async function publicarAvisoMovil() {
+        const title = document.getElementById('txt-notice-title').value.trim();
+        const message = document.getElementById('txt-notice-message').value.trim();
+        const target = document.getElementById('txt-notice-target').value.trim();
+
+        if (!title || !message) {
+          showToast("Por favor complete el título y mensaje antes de publicar.", "error");
+          return;
+        }
+
+        try {
+          const payload = {
+            id: "notice_" + Date.now(),
+            titulo: title,
+            mensaje: message
+          };
+          if (target) {
+            payload.target_licencia = target;
+          }
+          await fetchFirebase('app_settings/notice.json', 'PUT', payload);
+          showToast("Aviso móvil publicado con éxito.", "success");
+        } catch (e) {
+          console.error(e);
+          showToast("No se pudo publicar el aviso móvil.", "error");
+        }
+      }
+
+      async function limpiarAvisoMovil() {
+        try {
+          await fetchFirebase('app_settings/notice.json', 'DELETE');
+          document.getElementById('txt-notice-title').value = 'Aviso Importante';
+          document.getElementById('txt-notice-message').value = '';
+          document.getElementById('txt-notice-target').value = '';
+          showToast("Aviso móvil eliminado de la nube.", "info");
+        } catch (e) {
+          console.error(e);
+          showToast("No se pudo limpiar el aviso móvil.", "error");
+        }
+      }
+
+      async function forzarActualizacion() {
+        if (!confirm("¿Está seguro de forzar la actualización de todas las terminales remotas?")) {
+          return;
+        }
+        try {
+          const updateId = String(Date.now());
+          await fetchFirebase('forzar_update_id.json', 'PUT', updateId);
+          showToast("Orden de actualización forzada enviada.", "success");
+        } catch (e) {
+          console.error(e);
+          showToast("Error al ordenar la actualización.", "error");
+        }
+      }
+
+      // ── Logs del Sistema ─────────────────────────────────────────────
+
+      function renderLogs(logsObj) {
+        const container = document.getElementById('logs-list');
+        const countEl = document.getElementById('logs-count');
+
+        if (!logsObj || Object.keys(logsObj).length === 0) {
+          container.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">
+          ✅ Sin logs ni eventos de auditoría registrados.
         </div>`;
-        if (countEl) countEl.textContent = '';
-        return;
-      }
+          if (countEl) countEl.textContent = '';
+          return;
+        }
 
-      // Ordenar: más recientes primero
-      const entries = Object.entries(logsObj).sort((a, b) => b[0].localeCompare(a[0]));
-      if (countEl) countEl.textContent = `(${entries.length})`;
+        // Ordenar: más recientes primero
+        const entries = Object.entries(logsObj).sort((a, b) => b[0].localeCompare(a[0]));
+        if (countEl) countEl.textContent = `(${entries.length})`;
 
-      let html = '';
-      entries.forEach(([key, log]) => {
-        const nivel   = (log.nivel || 'INFO').toUpperCase();
-        const ts      = escapeHTML(log.timestamp || '');
-        const msg     = escapeHTML(log.mensaje   || '');
-        const detalle = escapeHTML(log.detalle   || '');
+        let html = '';
+        entries.forEach(([key, log]) => {
+          const nivel = (log.nivel || 'INFO').toUpperCase();
+          const ts = escapeHTML(log.timestamp || '');
+          const msg = escapeHTML(log.mensaje || '');
+          const detalle = escapeHTML(log.detalle || '');
+          const isAudit = log.tipo === 'auditoria';
 
-        html += `
-          <div class="log-entry nivel-${nivel}" onclick="this.classList.toggle('expanded')">
-            <span class="log-badge nivel-${nivel}">${nivel}</span>
+          const borderStyle = isAudit ? 'border-left-color: var(--primary);' : '';
+          const badgeClass = isAudit ? 'background: rgba(99, 102, 241, 0.2); color: #a5b4fc;' : '';
+          const badgeText = isAudit ? 'AUDIT' : nivel;
+
+          html += `
+          <div class="log-entry ${isAudit ? 'nivel-INFO' : 'nivel-' + nivel}" style="${borderStyle}" onclick="this.classList.toggle('expanded')">
+            ${isAudit
+              ? `<span class="log-badge" style="${badgeClass}">${badgeText}</span>`
+              : `<span class="log-badge nivel-${nivel}">${nivel}</span>`
+            }
             <div class="log-body">
               <span class="log-ts">${ts}</span>
               <span class="log-msg">${msg}</span>
               ${detalle ? `<pre class="log-detail">${detalle}</pre>` : ''}
             </div>
           </div>`;
-      });
+        });
 
-      container.innerHTML = html;
-    }
-
-    async function cargarLogs() {
-      if (!dbUrl) return;
-      try {
-        const logs = await fetchFirebase('logs.json');
-        renderLogs(logs);
-      } catch (e) {
-        // Silenciar error de carga de logs para no generar bucles
+        container.innerHTML = html;
       }
-    }
 
-    async function limpiarLogs() {
-      if (!confirm("¿Eliminar todos los logs del sistema en la nube?")) return;
-      try {
-        await fetchFirebase('logs.json', 'DELETE');
-        document.getElementById('logs-list').innerHTML =
-          `<div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">✅ Logs limpiados.</div>`;
-        document.getElementById('logs-count').textContent = '';
-        showToast("Logs eliminados.", "info");
-      } catch (e) {
-        showToast("No se pudieron limpiar los logs.", "error");
+      async function cargarLogs() {
+        if (!dbUrl) return;
+        try {
+          const [sysLogs, auditLogs] = await Promise.all([
+            fetchFirebase('logs.json').catch(() => null),
+            fetchFirebase('auditoria.json').catch(() => null)
+          ]);
+
+          const combinedLogs = {};
+
+          if (sysLogs) {
+            Object.entries(sysLogs).forEach(([key, log]) => {
+              if (!log) return;
+              combinedLogs[key] = {
+                tipo: 'sistema',
+                nivel: log.nivel || 'INFO',
+                timestamp: log.timestamp || new Date().toISOString(),
+                mensaje: log.mensaje || '',
+                detalle: log.detalle || ''
+              };
+            });
+          }
+
+          if (auditLogs) {
+            Object.entries(auditLogs).forEach(([key, audit]) => {
+              if (!audit) return;
+              combinedLogs[key] = {
+                tipo: 'auditoria',
+                nivel: 'INFO',
+                timestamp: audit.timestamp || new Date().toISOString(),
+                mensaje: `[Auditoría] ${audit.accion}: ${audit.detalles}`,
+                detalle: `Usuario: ${audit.usuario || 'Sistema'}\nClave de Licencia: ${audit.clave || 'N/A'}`
+              };
+            });
+          }
+
+          try {
+            renderLogs(combinedLogs);
+          } catch (renderError) {
+            console.error("Error al renderizar logs:", renderError);
+            document.getElementById('logs-list').innerHTML = `<div style="text-align:center; color:var(--danger); padding:2rem; font-size:0.85rem;">Error de renderizado: ${renderError.message}</div>`;
+          }
+        } catch (e) {
+          // Silenciar error de carga de logs para no generar bucles
+        }
       }
-    }
 
-  </script>
+      async function limpiarLogs() {
+        if (!confirm("¿Eliminar todos los logs del sistema en la nube?")) return;
+        try {
+          await fetchFirebase('logs.json', 'DELETE');
+          document.getElementById('logs-list').innerHTML =
+            `<div style="text-align:center; color:var(--text-muted); padding:2rem; font-size:0.85rem;">✅ Logs limpiados.</div>`;
+          document.getElementById('logs-count').textContent = '';
+          showToast("Logs eliminados.", "info");
+        } catch (e) {
+          showToast("No se pudieron limpiar los logs.", "error");
+        }
+      }
+
+      // ════════════════════════════════════════════════════════════════
+      // GESTIÓN DE LICENCIAS
+      // ════════════════════════════════════════════════════════════════
+
+      function generarClave() {
+        const anio = new Date().getFullYear();
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+        const rand = (n) => Array.from({ length: n }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
+        return `AURA-${anio}-${rand(4)}-${rand(4)}`;
+      }
+
+      async function cargarLicencias() {
+        if (!dbUrl) return;
+        const tbody = document.getElementById('table-licenses-body');
+        const mobileList = document.getElementById('mobile-licenses-list');
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-soft); padding:2rem;"><span class="loader"></span><br><br>Cargando licencias...</td></tr>`;
+
+        try {
+          const data = await fetchFirebase('licencias.json');
+          licenciasCachedData = data || {};
+          if (!data || Object.keys(data).length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-muted); padding:2rem;">No hay licencias registradas.</td></tr>`;
+            mobileList.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:2rem;">No hay licencias registradas.</p>`;
+            return;
+          }
+          try {
+            renderLicencias(data);
+          } catch (renderError) {
+            console.error("Error al renderizar licencias:", renderError);
+            tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--danger); padding:1.5rem; font-size:0.85rem;">Error de renderizado: ${renderError.message}</td></tr>`;
+          }
+        } catch (e) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--danger); padding:1rem;">Error cargando licencias.</td></tr>`;
+        }
+      }
+
+      function renderLicencias(data) {
+        const tbody = document.getElementById('table-licenses-body');
+        const mobileList = document.getElementById('mobile-licenses-list');
+        const ahora = new Date();
+        let desktopHTML = '';
+        let mobileHTML = '';
+
+        Object.entries(data).forEach(([clave, lic]) => {
+          if (!lic) return;
+          const estado = lic.estado || 'activa';
+          const expira = lic.fecha_expira ? lic.fecha_expira.substring(0, 10) : '—';
+          const expirado = lic.fecha_expira && new Date(lic.fecha_expira) < ahora;
+          const act = `${lic.activaciones || 0}/${lic.max_activaciones || 1}`;
+
+          let estadoBadge = '';
+          if (estado === 'suspendida') {
+            estadoBadge = `<span class="badge" style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3);color:#fca5a5;">🔴 Suspendida</span>`;
+          } else if (expirado) {
+            estadoBadge = `<span class="badge" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);color:#fde68a;">⚠️ Expirada</span>`;
+          } else {
+            estadoBadge = `<span class="badge badge-success">🟢 Activa</span>`;
+          }
+
+          const planBadge = `<span class="badge badge-primary" style="text-transform:capitalize;">${escapeHTML(lic.plan || 'básico')}</span>`;
+          const webBadge = lic.permitir_sitio_web === true
+            ? `<span class="badge badge-success" style="cursor:pointer;" onclick="toggleSitioWeb('${escapeHTML(clave)}', true)" title="Clic para alternar permiso">🌐 Habilitado</span>`
+            : `<span class="badge" style="background:rgba(148,163,184,0.15);border:1px solid rgba(148,163,184,0.3);color:#94a3b8;cursor:pointer;" onclick="toggleSitioWeb('${escapeHTML(clave)}', false)" title="Clic para alternar permiso">🔒 No incluido</span>`;
+          const isSuspended = estado === 'suspendida';
+
+          // Construir lista de equipos vinculados para escritorio
+          let equiposHTML = '';
+          if (lic.activaciones_detalle && Object.keys(lic.activaciones_detalle).length > 0) {
+            equiposHTML = `
+            <table style="width:100%; font-size:0.78rem; border-collapse:collapse; margin: 0.5rem 0;">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.02); text-align:left;">
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Nombre / ID</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Última Conexión</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600; text-align:right;">Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+            Object.entries(lic.activaciones_detalle).forEach(([machId, det]) => {
+              if (!det) return;
+              const hostname = det.hostname || machId;
+              const lastSeen = det.last_seen ? det.last_seen.substring(0, 16).replace('T', ' ') : '—';
+              equiposHTML += `
+              <tr>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); font-weight:600; color:#fff;">
+                  ${escapeHTML(hostname)}<br>
+                  <span style="font-size:0.7rem; color:var(--text-muted); font-weight:400;">ID: ${escapeHTML(machId)}</span>
+                </td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); color:var(--text-soft);">${escapeHTML(lastSeen)}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); text-align:right;">
+                  <button class="btn-logout" style="padding:0.25rem 0.5rem; font-size:0.75rem; border-radius:4px; margin:0 0.25rem 0 0; background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.3); color:#fbbf24;" onclick="forzarBorradoDte('${escapeHTML(machId)}')">
+                    Wipe DTE
+                  </button>
+                  <button class="btn-logout" style="padding:0.25rem 0.5rem; font-size:0.75rem; border-radius:4px; margin:0;" onclick="desvincularTerminalDeLicencia('${escapeHTML(clave)}', '${escapeHTML(machId)}', '${escapeHTML(hostname)}')">
+                    Desvincular
+                  </button>
+                </td>
+              </tr>
+            `;
+            });
+            equiposHTML += `
+              </tbody>
+            </table>
+          `;
+          } else {
+            equiposHTML = `<div style="color:var(--text-muted); font-size:0.78rem; padding:0.5rem 0;">No hay equipos vinculados a esta licencia.</div>`;
+          }
+
+          // Construir equipos vinculados para móvil
+          let mobileEquiposHTML = '';
+          if (lic.activaciones_detalle && Object.keys(lic.activaciones_detalle).length > 0) {
+            Object.entries(lic.activaciones_detalle).forEach(([machId, det]) => {
+              if (!det) return;
+              const hostname = det.hostname || machId;
+              const lastSeen = det.last_seen ? det.last_seen.substring(0, 16).replace('T', ' ') : '—';
+              mobileEquiposHTML += `
+              <div style="font-size:0.75rem; border-bottom:1px solid rgba(255,255,255,0.04); padding:0.4rem 0; display:flex; flex-direction:column; gap:0.2rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-weight:600; color:#fff;">${escapeHTML(hostname)}</span>
+                  <div style="display:flex; gap:0.25rem;">
+                    <button class="btn-logout" style="padding:0.2rem 0.4rem; font-size:0.7rem; border-radius:4px; margin:0; background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.3); color:#fbbf24;" onclick="forzarBorradoDte('${escapeHTML(machId)}')">
+                      Wipe DTE
+                    </button>
+                    <button class="btn-logout" style="padding:0.2rem 0.4rem; font-size:0.7rem; border-radius:4px; margin:0;" onclick="desvincularTerminalDeLicencia('${escapeHTML(clave)}', '${escapeHTML(machId)}', '${escapeHTML(hostname)}')">
+                      Desvincular
+                    </button>
+                  </div>
+                </div>
+                <div style="color:var(--text-soft);">ID: <code>${escapeHTML(machId)}</code></div>
+                <div style="color:var(--text-muted);">Visto: ${escapeHTML(lastSeen)}</div>
+              </div>
+            `;
+            });
+          } else {
+            mobileEquiposHTML = `<div style="color:var(--text-muted); font-size:0.75rem;">No hay equipos vinculados.</div>`;
+          }
+
+          // Construir tabla de pagos para escritorio
+          let pagosHTML = '';
+          if (lic.pagos && Object.keys(lic.pagos).length > 0) {
+            pagosHTML = `
+            <table style="width:100%; font-size:0.78rem; border-collapse:collapse; margin: 0.5rem 0;">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.02); text-align:left;">
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Fecha</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Monto</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Método</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Referencia</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Periodo</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600;">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+            const sortedPagos = Object.values(lic.pagos).sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
+            sortedPagos.forEach(p => {
+              if (!p) return;
+              pagosHTML += `
+              <tr>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02);">${escapeHTML(p.fecha)}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); font-weight:600; color:var(--success);">$${escapeHTML(String(p.monto))}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); text-transform:capitalize;">${escapeHTML(p.metodo)}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02);"><code>${escapeHTML(p.ref || '—')}</code></td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02);">${escapeHTML(p.periodo || '—')}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); color:var(--text-soft);">${escapeHTML(p.notas || '—')}</td>
+              </tr>
+            `;
+            });
+            pagosHTML += `
+              </tbody>
+            </table>
+          `;
+          } else {
+            pagosHTML = `<div style="color:var(--text-muted); font-size:0.78rem; padding:0.5rem 0;">No hay pagos registrados para esta licencia.</div>`;
+          }
+
+          // Construir tabla de auditoría para escritorio
+          let auditoriaHTML = '';
+          if (lic.auditoria && Object.keys(lic.auditoria).length > 0) {
+            auditoriaHTML = `
+            <table style="width:100%; font-size:0.78rem; border-collapse:collapse; margin: 0.5rem 0;">
+              <thead>
+                <tr style="background:rgba(255,255,255,0.02); text-align:left;">
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600; width:20%;">Fecha</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600; width:25%;">Acción</th>
+                  <th style="padding:0.4rem; color:var(--text-soft); border-bottom:1px solid rgba(255,255,255,0.05); font-weight:600; width:55%;">Detalles</th>
+                </tr>
+              </thead>
+              <tbody>
+          `;
+            const sortedAuditoria = Object.values(lic.auditoria).sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+            sortedAuditoria.forEach(a => {
+              if (!a) return;
+              auditoriaHTML += `
+              <tr>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); white-space:nowrap;">${escapeHTML(a.fecha)}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); font-weight:600; color:var(--primary);">${escapeHTML(a.accion)}</td>
+                <td style="padding:0.4rem; border-bottom:1px solid rgba(255,255,255,0.02); color:var(--text-soft);">${escapeHTML(a.detalles)}</td>
+              </tr>
+            `;
+            });
+            auditoriaHTML += `
+              </tbody>
+            </table>
+          `;
+          } else {
+            auditoriaHTML = `<div style="color:var(--text-muted); font-size:0.78rem; padding:0.5rem 0;">No hay eventos de auditoría registrados.</div>`;
+          }
+
+          // Construir pagos para móvil
+          let mobilePagosHTML = '';
+          if (lic.pagos && Object.keys(lic.pagos).length > 0) {
+            const sortedPagos = Object.values(lic.pagos).sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
+            sortedPagos.forEach(p => {
+              if (!p) return;
+              mobilePagosHTML += `
+              <div style="font-size:0.75rem; border-bottom:1px solid rgba(255,255,255,0.04); padding:0.4rem 0; display:flex; flex-direction:column; gap:0.2rem;">
+                <div style="display:flex; justify-content:space-between;">
+                  <span style="font-weight:600; color:#fff;">${escapeHTML(p.fecha)}</span>
+                  <span style="font-weight:600; color:var(--success);">$${escapeHTML(String(p.monto))} (${escapeHTML(p.metodo)})</span>
+                </div>
+                <div style="color:var(--text-soft);">Ref: <code>${escapeHTML(p.ref || '—')}</code> | Periodo: ${escapeHTML(p.periodo || '—')}</div>
+                ${p.notas ? `<div style="color:var(--text-muted); font-style:italic;">Nota: ${escapeHTML(p.notas)}</div>` : ''}
+              </div>
+            `;
+            });
+          } else {
+            mobilePagosHTML = `<div style="color:var(--text-muted); font-size:0.75rem;">No hay pagos registrados.</div>`;
+          }
+
+          // Construir auditoría para móvil
+          let mobileAuditoriaHTML = '';
+          if (lic.auditoria && Object.keys(lic.auditoria).length > 0) {
+            const sortedAuditoria = Object.values(lic.auditoria).sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+            sortedAuditoria.forEach(a => {
+              if (!a) return;
+              mobileAuditoriaHTML += `
+              <div style="font-size:0.75rem; border-bottom:1px solid rgba(255,255,255,0.04); padding:0.4rem 0; display:flex; flex-direction:column; gap:0.2rem;">
+                <div style="display:flex; justify-content:space-between;">
+                  <span style="font-weight:600; color:#fff;">${escapeHTML(a.fecha)}</span>
+                  <span style="font-weight:600; color:var(--primary);">${escapeHTML(a.accion)}</span>
+                </div>
+                <div style="color:var(--text-soft);">${escapeHTML(a.detalles)}</div>
+              </div>
+            `;
+            });
+          } else {
+            mobileAuditoriaHTML = `<div style="color:var(--text-muted); font-size:0.75rem;">No hay eventos de auditoría registrados.</div>`;
+          }
+
+          desktopHTML += `
+          <tr>
+            <td><code style="font-size:0.78rem;color:var(--text-soft);user-select:all;cursor:pointer;" onclick="copiarClave('${escapeHTML(clave)}')" title="Clic para copiar">${escapeHTML(clave)}</code></td>
+            <td>
+              <div style="font-weight:600;color:#fff;">${escapeHTML(lic.cliente || '—')}</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);">${escapeHTML(lic.email || '')}</div>
+            </td>
+            <td>${planBadge}</td>
+            <td>${estadoBadge}</td>
+            <td>${webBadge}</td>
+            <td style="font-size:0.82rem;color:var(--text-soft);">${expira}</td>
+            <td style="text-align:center;font-size:0.82rem;">${act}</td>
+            <td>
+              <div class="row-actions">
+                <button class="btn-icon" title="Copiar clave" onclick="copiarClave('${escapeHTML(clave)}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+                <button class="btn-icon" title="${lic.permitir_sitio_web === true ? 'Desactivar Catálogo Web' : 'Activar Catálogo Web'}" onclick="toggleSitioWeb('${escapeHTML(clave)}', ${lic.permitir_sitio_web === true})">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="${lic.permitir_sitio_web === true ? 'var(--primary)' : 'var(--text-muted)'}" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </button>
+                <button class="btn-icon" title="Ver Detalles (Pagos, Auditoría, Equipos)" onclick="togglePagos('${escapeHTML(clave)}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="#38bdf8" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                </button>
+                <button class="btn-icon" title="Registrar Pago" onclick="registrarPago('${escapeHTML(clave)}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="var(--success)" stroke-width="2" fill="none"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </button>
+                <button class="btn-icon" title="Ajustar Días de Licencia" onclick="ajustarDias('${escapeHTML(clave)}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="#fb7185" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </button>
+                <button class="btn-icon" title="Cambiar Plan" onclick="cambiarPlan('${escapeHTML(clave)}', '${escapeHTML(lic.plan || 'basico')}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="#a78bfa" stroke-width="2" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </button>
+                <button class="btn-icon" title="Restablecer Activaciones" onclick="restablecerActivaciones('${escapeHTML(clave)}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="var(--warning)" stroke-width="2" fill="none"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                </button>
+                <button class="btn-icon" title="Enviar aviso de vencimiento" onclick="enviarAvisoVencimiento('${escapeHTML(clave)}', '${escapeHTML(lic.cliente || '')}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="var(--warning)" stroke-width="2" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </button>
+                <button class="btn-icon ${isSuspended ? '' : 'btn-icon-danger'}" title="${isSuspended ? 'Reactivar' : 'Suspender'}"
+                  onclick="toggleSuspender('${escapeHTML(clave)}', ${isSuspended})">
+                  ${isSuspended
+              ? `<svg viewBox="0 0 24 24" width="15" height="15" stroke="var(--success)" stroke-width="2" fill="none"><polyline points="20 6 9 17 4 12"/></svg>`
+              : `<svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>`
+            }
+                </button>
+                <button class="btn-icon btn-icon-danger" title="Eliminar" onclick="eliminarLicencia('${escapeHTML(clave)}', '${escapeHTML(lic.cliente || '')}')">
+                  <svg viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr id="payments-${clave}" style="display:none; background:rgba(0,0,0,0.18);">
+            <td colspan="8" style="padding:1rem 1.5rem; border-bottom:1px solid rgba(255,255,255,0.06);">
+              <div style="display:grid; grid-template-columns: 1fr 1fr 1.2fr; gap:1.5rem;">
+                <div>
+                  <div style="font-weight:600; color:var(--success); font-size:0.85rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.3rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    Historial de Pagos
+                  </div>
+                  ${pagosHTML}
+                </div>
+                <div>
+                  <div style="font-weight:600; color:#38bdf8; font-size:0.85rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.3rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    Auditoría de Licencia
+                  </div>
+                  ${auditoriaHTML}
+                </div>
+                <div>
+                  <div style="font-weight:600; color:var(--warning); font-size:0.85rem; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.3rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    Equipos Vinculados
+                  </div>
+                  ${equiposHTML}
+                </div>
+              </div>
+            </td>
+          </tr>`;
+
+          mobileHTML += `
+          <div class="terminal-card">
+            <div class="t-card-row">
+              <div>
+                <div class="terminal-name">${escapeHTML(lic.cliente || '—')}</div>
+                <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.2rem;user-select:all;cursor:pointer;" onclick="copiarClave('${escapeHTML(clave)}')" title="Clic para copiar">${escapeHTML(clave)}</div>
+              </div>
+              ${estadoBadge}
+            </div>
+            <div class="t-card-details">
+              <div class="t-card-detail-item"><span>Plan</span><span style="text-transform:capitalize;">${escapeHTML(lic.plan || '—')}</span></div>
+              <div class="t-card-detail-item"><span>Web</span><span>${webBadge}</span></div>
+              <div class="t-card-detail-item"><span>Expira</span><span>${expira}</span></div>
+              <div class="t-card-detail-item"><span>Activaciones</span><span>${act}</span></div>
+              <div class="t-card-detail-item"><span>Email</span><span>${escapeHTML(lic.email || '—')}</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px;" onclick="copiarClave('${escapeHTML(clave)}')">Copiar</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:#38bdf8; border-color:rgba(56,189,248,0.2);" onclick="toggleMobilePagos('${escapeHTML(clave)}')">Detalles</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:var(--success); border-color:rgba(16,185,129,0.2);" onclick="registrarPago('${escapeHTML(clave)}')">Pago</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:#fb7185; border-color:rgba(251,113,133,0.2);" onclick="ajustarDias('${escapeHTML(clave)}')">Días</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:#a78bfa; border-color:rgba(167,139,250,0.2);" onclick="cambiarPlan('${escapeHTML(clave)}', '${escapeHTML(lic.plan || 'basico')}')">Plan</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px;" onclick="restablecerActivaciones('${escapeHTML(clave)}')">Rest. Act.</button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:${lic.permitir_sitio_web === true ? 'var(--primary)' : 'var(--text-muted)'}; border-color:${lic.permitir_sitio_web === true ? 'rgba(99,102,241,0.3)' : 'rgba(255,255,255,0.1)'};" onclick="toggleSitioWeb('${escapeHTML(clave)}', ${lic.permitir_sitio_web === true})">
+                ${lic.permitir_sitio_web === true ? '🌐 Desact. Web' : '🌐 Act. Web'}
+              </button>
+              <button class="btn btn-outline" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; color:var(--warning); border-color:rgba(245,158,11,0.2);" onclick="enviarAvisoVencimiento('${escapeHTML(clave)}', '${escapeHTML(lic.cliente || '')}')">Aviso</button>
+              <button class="btn btn-danger" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px;" onclick="eliminarLicencia('${escapeHTML(clave)}', '${escapeHTML(lic.cliente || '')}')">Eliminar</button>
+              <button class="btn btn-outline ${isSuspended ? 'btn-success' : ''}" style="font-size:0.75rem; padding:0.4rem; width:100%; border-radius:6px; grid-column: span 3; ${isSuspended ? '' : 'color:var(--danger); border-color:rgba(239,68,68,0.2);'}" onclick="toggleSuspender('${escapeHTML(clave)}', ${isSuspended})">
+                ${isSuspended ? 'Reactivar Licencia' : 'Suspender Licencia'}
+              </button>
+            </div>
+            <div id="m-payments-${clave}" style="display:none; padding:0.75rem; background:rgba(0,0,0,0.15); border-radius:8px; margin-top:0.5rem; flex-direction:column; gap:0.75rem;">
+              <div>
+                <div style="font-weight:600; color:var(--success); font-size:0.75rem; margin-bottom:0.4rem;">📊 Historial de Pagos</div>
+                ${mobilePagosHTML}
+              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:0.5rem;">
+                <div style="font-weight:600; color:#38bdf8; font-size:0.75rem; margin-bottom:0.4rem;">📜 Auditoría de Licencia</div>
+                ${mobileAuditoriaHTML}
+              </div>
+              <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:0.5rem;">
+                <div style="font-weight:600; color:var(--warning); font-size:0.75rem; margin-bottom:0.4rem;">💻 Equipos Vinculados</div>
+                ${mobileEquiposHTML}
+              </div>
+            </div>
+          </div>`;
+        });
+
+        tbody.innerHTML = desktopHTML;
+        mobileList.innerHTML = mobileHTML;
+      }
+
+      async function registrarPago(clave) {
+        const monto = parseFloat(prompt('Monto recibido ($):'));
+        if (isNaN(monto) || monto <= 0) return;
+
+        const metodo = prompt('Método (transferencia/efectivo/deposito/tarjeta):') || 'efectivo';
+        const referencia = prompt('Número de referencia (opcional):') || '';
+        const notas = prompt('Notas (opcional):') || '';
+
+        const hoy = new Date();
+        let baseFecha = new Date();
+
+        const lic = (typeof licenciasCachedData !== 'undefined' ? licenciasCachedData[clave] : null) || {};
+        if (lic.vence_el) {
+          const parts = lic.vence_el.split('-');
+          if (parts.length === 3) {
+            const tempFecha = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), 0, 0, 0);
+            if (!isNaN(tempFecha) && tempFecha > baseFecha) {
+              baseFecha = tempFecha;
+            }
+          }
+        }
+
+        // Sumar exactamente 31 días desde la fecha base
+        const nuevaFecha = new Date(baseFecha.getTime() + 31 * 24 * 60 * 60 * 1000);
+        const graciaFecha = new Date(nuevaFecha.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+        const hoyStr = formatLocalYMD(hoy);
+        const inicioPeriodoStr = formatLocalYMD(baseFecha);
+        const finPeriodoStr = formatLocalYMD(nuevaFecha);
+        const graciaStr = formatLocalYMD(graciaFecha);
+
+        const pagoId = `pago_${Date.now()}`;
+        const updates = {};
+
+        // Registrar pago
+        updates[`licencias/${clave}/pagos/${pagoId}`] = {
+          monto,
+          metodo,
+          ref: referencia,
+          notas,
+          fecha: hoyStr,
+          periodo: `${inicioPeriodoStr}/${finPeriodoStr}`,
+        };
+
+        // Extender suscripción
+        updates[`licencias/${clave}/activa`] = true;
+        updates[`licencias/${clave}/suspendida`] = false;
+        updates[`licencias/${clave}/estado`] = 'activa';
+        updates[`licencias/${clave}/vence_el`] = finPeriodoStr;
+        updates[`licencias/${clave}/gracia_hasta`] = graciaStr;
+        updates[`licencias/${clave}/fecha_expira`] = nuevaFecha.toISOString(); // keep legacy synced
+
+        try {
+          await fetchFirebase('.json', 'PATCH', updates);
+
+          // Limpiar aviso de vencimiento en Firebase al registrar pago
+          try {
+            await fetchFirebase('app_settings/notice.json', 'DELETE');
+          } catch (err) {
+            // Ignorar si no existía
+          }
+
+          // Registrar en auditoría
+          await registrarAuditoria(clave, "Pago Registrado", `Pago de $${monto} recibido por método ${metodo}. Referencia: ${referencia || 'ninguna'}. Plan extendido 31 días hasta ${finPeriodoStr} (periodo de gracia hasta ${graciaStr}).`);
+
+          showToast("Pago registrado con éxito y suscripción extendida.", "success");
+          cargarLicencias();
+        } catch (e) {
+          showToast(`Error: ${e.message}`, "error");
+        }
+      }
+
+      function onPlanChange(val) {
+        const diasInput = document.getElementById('lic-dias');
+        if (val === 'demo-7') {
+          diasInput.value = 7;
+        } else if (val === 'demo-15') {
+          diasInput.value = 15;
+        } else if (val === 'trial') {
+          diasInput.value = 30;
+        } else if (val === 'basico' || val === 'premium') {
+          diasInput.value = 365;
+        }
+      }
+
+      async function enviarAvisoVencimiento(clave, cliente) {
+        if (!confirm(`¿Enviar aviso de vencimiento para la licencia de "${cliente}"?`)) return;
+
+        const mensaje = `Tu licencia de AuraPOS (${cliente}) vence pronto. Por favor ponte en contacto con soporte técnico para renovar tu suscripción y evitar cortes de servicio.`;
+
+        const payload = {
+          id: "notice_" + Date.now(),
+          titulo: "Aviso de Licencia",
+          mensaje: mensaje,
+          target_licencia: clave
+        };
+
+        try {
+          await fetchFirebase('app_settings/notice.json', 'PUT', payload);
+
+          await registrarAuditoria(clave, "Aviso de Vencimiento", `Aviso de vencimiento enviado a la terminal de ${cliente}.`);
+
+          showToast("Aviso de vencimiento enviado a la terminal móvil.", "success");
+        } catch (e) {
+          showToast("Error al enviar el aviso: " + e.message, "error");
+        }
+      }
+
+      function togglePagos(clave) {
+        const row = document.getElementById(`payments-${clave}`);
+        if (row) {
+          row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+        }
+      }
+
+      function toggleMobilePagos(clave) {
+        const el = document.getElementById(`m-payments-${clave}`);
+        if (el) {
+          el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+        }
+      }
+
+      async function cambiarPlan(clave, planActual) {
+        const nuevoPlan = planActual === 'premium' ? 'basico' : 'premium';
+        const confirmChange = window.confirm(
+          `¿Cambiar el plan de esta licencia de ${planActual.toUpperCase()} a ${nuevoPlan.toUpperCase()}?`
+        );
+        if (!confirmChange) return;
+
+        try {
+          await fetchFirebase(`licencias/${clave}.json`, 'PATCH', { plan: nuevoPlan });
+
+          await registrarAuditoria(clave, "Cambio de Plan", `Plan cambiado de ${planActual.toUpperCase()} a ${nuevoPlan.toUpperCase()}.`);
+
+          showToast(`Plan cambiado a ${nuevoPlan.toUpperCase()}`, "success");
+          cargarLicencias();
+        } catch (e) {
+          showToast(`Error: ${e.message}`, "error");
+        }
+      }
+
+      async function toggleSuspender(clave, actSuspendida) {
+        const nuevoEstado = actSuspendida ? 'activa' : 'suspendida';
+        const msg = actSuspendida
+          ? `¿Reactivar la licencia ${clave}?`
+          : `¿Suspender la licencia ${clave}? El cliente no podrá usarla hasta que la reactives.`;
+        if (!confirm(msg)) return;
+        try {
+          await fetchFirebase(`licencias/${clave}.json`, 'PATCH', {
+            estado: nuevoEstado,
+            activa: actSuspendida,
+            suspendida: !actSuspendida
+          });
+
+          await registrarAuditoria(clave, actSuspendida ? "Reactivación de Licencia" : "Suspensión de Licencia", actSuspendida ? "Licencia reactivada." : "Licencia suspendida.");
+
+          showToast(actSuspendida ? 'Licencia reactivada.' : 'Licencia suspendida.', actSuspendida ? 'success' : 'info');
+          cargarLicencias();
+        } catch (e) {
+          showToast('Error al cambiar estado.', 'error');
+        }
+      }
+ 
+      async function ajustarDias(clave) {
+        const lic = (typeof licenciasCachedData !== 'undefined' ? licenciasCachedData[clave] : null) || {};
+        const venceActual = lic.vence_el || 'No definida';
+        
+        const entrada = prompt(
+          `Ajustar días de licencia para: ${lic.cliente || clave}\n` +
+          `Fecha de vencimiento actual: ${venceActual}\n\n` +
+          `Ingrese el número de días a sumar o restar:`
+        );
+        
+        if (entrada === null || entrada.trim() === '') return;
+        const numDias = parseInt(entrada);
+        if (isNaN(numDias) || numDias === 0) {
+          alert('Por favor, ingrese un número entero válido (positivo o negativo).');
+          return;
+        }
+
+        let baseFecha = new Date();
+        if (lic.vence_el) {
+          const parts = lic.vence_el.split('-');
+          if (parts.length === 3) {
+            const tempFecha = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), 23, 59, 59);
+            if (!isNaN(tempFecha)) {
+              baseFecha = tempFecha;
+            }
+          }
+        }
+
+        const nuevaFecha = new Date(baseFecha.getTime() + numDias * 24 * 60 * 60 * 1000);
+        const graciaFecha = new Date(nuevaFecha.getTime() + 3 * 24 * 60 * 60 * 1000);
+
+        const finPeriodoStr = formatLocalYMD(nuevaFecha);
+        const graciaStr = formatLocalYMD(graciaFecha);
+
+        const confirmChange = confirm(
+          `¿Confirmar ajuste de días?\n\n` +
+          `Días a aplicar: ${numDias > 0 ? '+' : ''}${numDias} días\n` +
+          `Vencimiento anterior: ${venceActual}\n` +
+          `Nuevo vencimiento: ${finPeriodoStr}\n` +
+          `Prórroga de gracia: ${graciaStr}`
+        );
+
+        if (!confirmChange) return;
+
+        const updates = {};
+        updates[`licencias/${clave}/vence_el`] = finPeriodoStr;
+        updates[`licencias/${clave}/gracia_hasta`] = graciaStr;
+        updates[`licencias/${clave}/fecha_expira`] = nuevaFecha.toISOString();
+        
+        const now = new Date();
+        if (nuevaFecha > now) {
+          updates[`licencias/${clave}/activa`] = true;
+          updates[`licencias/${clave}/suspendida`] = false;
+          updates[`licencias/${clave}/estado`] = 'activa';
+        }
+
+        try {
+          await fetchFirebase('.json', 'PATCH', updates);
+          
+          await registrarAuditoria(
+            clave, 
+            "Ajuste de Días", 
+            `Vencimiento ajustado por ${numDias > 0 ? '+' : ''}${numDias} días. Anterior: ${venceActual}. Nuevo: ${finPeriodoStr} (gracia: ${graciaStr}).`
+          );
+
+          showToast("Días de licencia ajustados con éxito.", "success");
+          cargarLicencias();
+        } catch (e) {
+          showToast(`Error al ajustar días: ${e.message}`, "error");
+        }
+      }
+
+      async function eliminarLicencia(clave, cliente) {
+        if (!confirm(`¿Eliminar permanentemente la licencia de "${cliente || clave}"? Esta acción no se puede deshacer.`)) return;
+        try {
+          await registrarAuditoria(clave, "Eliminación de Licencia", `Licencia eliminada para ${cliente || clave}.`);
+          await fetchFirebase(`licencias/${clave}.json`, 'DELETE');
+          showToast('Licencia eliminada.', 'info');
+          cargarLicencias();
+        } catch (e) {
+          showToast('Error al eliminar.', 'error');
+        }
+      }
+
+      function copiarClave(clave) {
+        navigator.clipboard.writeText(clave).then(() => showToast(`Clave copiada: ${clave}`, 'success'));
+      }
+
+      async function restablecerActivaciones(clave) {
+        if (!confirm(`¿Está seguro de restablecer el contador de activaciones para la licencia ${clave}?\n\nEsto pondrá el número de activaciones en 0 y eliminará los detalles de hardware registrados, permitiendo al cliente volver a activar el software.`)) return;
+        try {
+          await fetchFirebase(`licencias/${clave}.json`, 'PATCH', {
+            activaciones: 0,
+            activaciones_detalle: null
+          });
+
+          await registrarAuditoria(clave, "Restablecer Activaciones", "Contador de activaciones restablecido a 0 y detalles de hardware eliminados.");
+
+          showToast('Contador de activaciones restablecido con éxito.', 'success');
+          cargarLicencias();
+        } catch (e) {
+          showToast('Error al restablecer las activaciones.', 'error');
+        }
+      }
+
+      async function toggleSitioWeb(clave, actual) {
+        if (!dbUrl) { showToast('Conéctate a Firebase primero.', 'error'); return; }
+        const nuevoEstado = !actual;
+        const accion = nuevoEstado ? 'Habilitar Módulo Web' : 'Deshabilitar Módulo Web';
+        if (!confirm(`¿Deseas ${accion.toLowerCase()} para la clave ${clave}?`)) return;
+        try {
+          await fetchFirebase(`licencias/${clave}.json`, 'PATCH', { permitir_sitio_web: nuevoEstado });
+          await registrarAuditoria(clave, accion, `Módulo de catálogo web ${nuevoEstado ? 'habilitado' : 'deshabilitado'}.`);
+          showToast(`Módulo web ${nuevoEstado ? 'habilitado' : 'deshabilitado'} exitosamente.`, 'success');
+          cargarLicencias();
+        } catch (e) {
+          showToast('Error al actualizar permiso de catálogo web.', 'error');
+        }
+      }
+
+      async function crearLicencia() {
+        const cliente = document.getElementById('lic-cliente').value.trim();
+        const email = document.getElementById('lic-email').value.trim();
+        const plan = document.getElementById('lic-plan').value;
+        const dias = parseInt(document.getElementById('lic-dias').value) || 365;
+        const maxAct = parseInt(document.getElementById('lic-activaciones').value) || 1;
+        const notas = document.getElementById('lic-notas').value.trim();
+        const permitirWeb = document.getElementById('lic-web').checked;
+        const btn = document.getElementById('btn-crear-licencia');
+        const resultado = document.getElementById('lic-resultado');
+
+        if (!cliente) { showToast('El nombre del cliente es obligatorio.', 'error'); return; }
+        if (!dbUrl) { showToast('Conéctate a Firebase primero.', 'error'); return; }
+
+        btn.disabled = true;
+        btn.innerText = 'Generando...';
+        resultado.style.display = 'none';
+
+        const clave = generarClave();
+        const ahora = new Date();
+        const expira = new Date(ahora.getTime() + dias * 86400000);
+        const vence_el = formatLocalYMD(expira);
+        const gracia_hasta = formatLocalYMD(new Date(expira.getTime() + 3 * 86400000));
+
+        const datos = {
+          cliente,
+          email,
+          plan,
+          permitir_sitio_web: permitirWeb,
+          estado: 'activa',
+          trial_dias: 30,
+          fecha_inicio: ahora.toISOString(),
+          fecha_expira: expira.toISOString(),
+          activaciones: 0,
+          max_activaciones: maxAct,
+          hardware_id: '',
+          creada_en: ahora.toISOString(),
+          notas,
+
+          // Campos de suscripción mensual (AuraPOS V2)
+          activa: true,
+          suspendida: false,
+          vence_el: vence_el,
+          gracia_hasta: gracia_hasta,
+          negocio: cliente,
+          contacto: email,
+          pagos: {}
+        };
+
+        try {
+          await fetchFirebase(`licencias/${clave}.json`, 'PUT', datos);
+
+          await registrarAuditoria(clave, "Creación de Licencia", `Licencia creada para ${cliente} (${email}) en plan ${plan.toUpperCase()} con ${dias} días de validez. Web: ${permitirWeb ? 'Habilitado' : 'No incluido'}.`);
+
+          resultado.innerHTML = `
+          <div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:10px;padding:1rem;margin-top:1rem;">
+            <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem;">✅ Licencia creada. Envía esta clave al cliente:</div>
+            <div style="font-family:'Outfit',monospace;font-size:1.1rem;font-weight:700;letter-spacing:0.12em;color:#a7f3d0;cursor:pointer;" onclick="copiarClave('${clave}')" title="Clic para copiar">
+              ${clave}
+            </div>
+            <div style="font-size:0.72rem;color:var(--text-muted);margin-top:0.4rem;">Clic para copiar al portapapeles</div>
+          </div>`;
+          resultado.style.display = 'block';
+          showToast('¡Licencia creada y publicada!', 'success');
+          cargarLicencias();
+          // Limpiar formulario
+          ['lic-cliente', 'lic-email', 'lic-notas'].forEach(id => document.getElementById(id).value = '');
+          document.getElementById('lic-dias').value = '365';
+          document.getElementById('lic-activaciones').value = '1';
+          document.getElementById('lic-web').checked = false;
+        } catch (e) {
+          showToast('Error al crear la licencia en Firebase.', 'error');
+        } finally {
+          btn.disabled = false;
+          btn.innerText = '🔑 Generar y Publicar';
+        }
+      }
+
+      async function generarCodigoRespuesta() {
+        const challengeField = document.getElementById('txt-challenge-code');
+        const challenge = challengeField.value.trim();
+        const resultContainer = document.getElementById('recovery-result-container');
+        const lblResponseCode = document.getElementById('lbl-response-code');
+
+        if (!challenge || challenge.length !== 6 || isNaN(challenge)) {
+          showToast('Ingrese un código de desafío válido de 6 dígitos.', 'error');
+          return;
+        }
+
+        try {
+          const text = challenge + "aura_response_salt_2026";
+          const msgBuffer = new TextEncoder().encode(text);
+          const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+          const hashArray = Array.from(new Uint8Array(hashBuffer));
+          const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+          const hexVal = parseInt(hashHex.substring(0, 8), 16);
+          const code = (hexVal % 900000) + 100000;
+
+          lblResponseCode.innerText = code.toString();
+          resultContainer.style.display = 'block';
+          showToast('Código de respuesta generado con éxito.', 'success');
+        } catch (e) {
+          showToast('Error al generar código: ' + e.message, 'error');
+        }
+      }
+
+      // ── GESTIÓN DE CATÁLOGO WEB (CLOUD FIRESTORE REST API) ──
+
+      async function consultarPinFirestore() {
+        const storeId = document.getElementById('txt-firestore-store-id').value.trim().toLowerCase();
+        const projectId = document.getElementById('txt-firestore-project-id').value.trim();
+        const resultDiv = document.getElementById('firestore-query-result');
+
+        const lblName = document.getElementById('lbl-fs-name');
+        const lblPhone = document.getElementById('lbl-fs-phone');
+        const lblPin = document.getElementById('lbl-fs-pin');
+
+        if (!storeId) {
+          showToast('Ingrese el ID de la tienda para consultar.', 'error');
+          return;
+        }
+        if (!projectId) {
+          showToast('Ingrese el ID del proyecto de Firebase.', 'error');
+          return;
+        }
+
+        lblName.innerText = 'Consultando...';
+        lblPhone.innerText = 'Consultando...';
+        lblPin.innerText = '...';
+        resultDiv.style.display = 'block';
+
+        try {
+          const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/stores/${storeId}`;
+          const response = await fetch(url);
+
+          if (response.status === 404) {
+            resultDiv.style.display = 'none';
+            showToast(`La tienda "${storeId}" no existe en la nube.`, 'error');
+            return;
+          }
+
+          if (!response.ok) {
+            throw new Error(`HTTP Error ${response.status}`);
+          }
+
+          const data = await response.json();
+          const fields = data.fields || {};
+
+          const businessName = fields.businessName?.stringValue || 'Sin Nombre';
+          const whatsappNumber = fields.whatsappNumber?.stringValue || 'Sin WhatsApp';
+          const syncPin = fields.syncPin?.stringValue || 'Sin PIN';
+
+          lblName.innerText = businessName;
+          lblPhone.innerText = whatsappNumber;
+          lblPin.innerText = syncPin;
+          showToast('Datos de tienda cargados.', 'success');
+        } catch (e) {
+          resultDiv.style.display = 'none';
+          showToast('Error al consultar Firestore: ' + e.message, 'error');
+        }
+      }
+
+      async function cambiarPinFirestore() {
+        const storeId = document.getElementById('txt-firestore-store-id').value.trim().toLowerCase();
+        const projectId = document.getElementById('txt-firestore-project-id').value.trim();
+        const newPin = document.getElementById('txt-firestore-new-pin').value.trim();
+        const adminToken = document.getElementById('txt-firestore-admin-token').value.trim();
+        const btn = document.getElementById('btn-fs-update');
+
+        if (!storeId) {
+          showToast('Ingrese el ID de la tienda.', 'error');
+          return;
+        }
+        if (!projectId) {
+          showToast('Ingrese el ID del proyecto de Firebase.', 'error');
+          return;
+        }
+        if (!newPin || newPin.length !== 4 || isNaN(newPin)) {
+          showToast('El PIN nuevo debe tener exactamente 4 dígitos numéricos.', 'error');
+          return;
+        }
+        if (!adminToken) {
+          showToast('Ingrese el Token Secreto Administrativo.', 'error');
+          return;
+        }
+
+        if (!confirm(`¿Está seguro de cambiar el PIN de sincronización de la tienda "${storeId}" en la nube?`)) {
+          return;
+        }
+
+        btn.disabled = true;
+        btn.innerText = 'Cambiando PIN...';
+
+        try {
+          const baseUrl = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents`;
+
+          // 1. Crear documento en pin_resets/{storeId} conteniendo el nuevo pin y token
+          const resetPayload = {
+            fields: {
+              newPin: { stringValue: newPin },
+              adminToken: { stringValue: adminToken }
+            }
+          };
+
+          showToast('Enviando solicitud de reinicio...', 'info');
+          const resetRes = await fetch(`${baseUrl}/pin_resets/${storeId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(resetPayload)
+          });
+
+          if (!resetRes.ok) {
+            throw new Error('Token administrativo incorrecto u otra restricción de reglas.');
+          }
+
+          // 2. Obtener la tienda para poder hacer el PATCH de forma segura con los campos existentes (Firestore PATCH requiere todos los campos requeridos por las reglas)
+          showToast('Obteniendo perfil de tienda...', 'info');
+          const storeRes = await fetch(`${baseUrl}/stores/${storeId}`);
+          if (!storeRes.ok) {
+            throw new Error('No se pudo leer el perfil de la tienda para actualizar.');
+          }
+          const storeData = await storeRes.json();
+          const storeFields = storeData.fields || {};
+
+          // 3. Modificar el campo syncPin y enviar de vuelta a stores/{storeId}
+          storeFields.syncPin = { stringValue: newPin };
+          const storePayload = { fields: storeFields };
+
+          showToast('Actualizando PIN de la tienda...', 'info');
+          const updateRes = await fetch(`${baseUrl}/stores/${storeId}?updateMask.fieldPaths=syncPin`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(storePayload)
+          });
+
+          if (!updateRes.ok) {
+            throw new Error('Fallo al actualizar el PIN de la tienda en Firestore.');
+          }
+
+          // 4. Limpiar: Eliminar el documento temporal en pin_resets/{storeId}
+          showToast('Limpiando solicitud temporal...', 'info');
+          await fetch(`${baseUrl}/pin_resets/${storeId}`, {
+            method: 'DELETE'
+          });
+
+          showToast('¡PIN de sincronización actualizado con éxito!', 'success');
+          document.getElementById('txt-firestore-new-pin').value = '';
+
+          // Refrescar consulta
+          await consultarPinFirestore();
+        } catch (e) {
+          showToast('Error al cambiar PIN: ' + e.message, 'error');
+        } finally {
+          btn.disabled = false;
+          btn.innerText = '🔑 Actualizar PIN en la Nube';
+        }
+      }
+
+    </script>
 </body>
+
 </html>
